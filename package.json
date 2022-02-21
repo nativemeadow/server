@@ -1,0 +1,23 @@
+{
+	"name": "gm-server",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.mjs",
+	"scripts": {
+		"start": "node ./server",
+		"server": "nodemon ./server"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"colors": "^1.4.0",
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.0",
+		"express": "^4.17.2",
+		"mysql": "^2.18.1",
+		"save-dev": "^0.0.1-security"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.15"
+	}
+}
