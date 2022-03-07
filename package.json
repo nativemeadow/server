@@ -4,8 +4,8 @@
 	"description": "",
 	"main": "server.mjs",
 	"scripts": {
-		"start": "node ./server",
-		"server": "nodemon ./server"
+		"start": "node ./server ,mjs",
+		"server": "nodemon ./server.mjs"
 	},
 	"author": "",
 	"license": "ISC",
