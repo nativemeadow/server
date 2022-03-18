@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 09, 2022 at 12:28 AM
+-- Generation Time: Mar 18, 2022 at 04:09 PM
 -- Server version: 8.0.27
 -- PHP Version: 8.1.2
 
@@ -117,21 +117,21 @@ CREATE TABLE `price` (
 --
 
 INSERT INTO `price` (`id`, `sku`, `title`, `description`, `price`, `size`, `units`, `coverage`, `coverage_value`, `product`) VALUES
-(1, 'C2BR', 'Class 2 Base Rock Sack', 'Per U-sack', '2.25', NULL, 'u-sack', 'Ton/Yard', '1.35', 1),
+(1, 'C2BR', 'Class 2 Base Rock Sack', 'Per U-sack', '2.25', NULL, 'sk', 'Ton/Yard', '1.35', 1),
 (2, 'C2BR', 'Class 2 Base Rock', 'Per Ton', '31.50', NULL, 'ton', 'Ton/Yard', '1.35', 1),
-(3, '34C2P', 'Class 2 Base Rock Permeable Sack', 'Per U-Sack', '5.25', NULL, 'u-sack', 'Ton/Yard', '1.25', 2),
+(3, '34C2P', 'Class 2 Base Rock Permeable Sack', 'Per U-Sack', '5.25', NULL, 'sk', 'Ton/Yard', '1.25', 2),
 (4, '34C2P', 'Class 2 Base Rock Permeable', 'Per Ton', '77.50', NULL, 'ton', 'Ton/Yard', '1.25', 2),
-(5, '14PG', '1/4&quot; Pea Gravel Sack', 'Per U-Sack', '5.50', NULL, 'u-sack', 'Ton/Yard', '1.25', 3),
+(5, '14PG', '1/4&quot; Pea Gravel Sack', 'Per U-Sack', '5.50', NULL, 'sk', 'Ton/Yard', '1.25', 3),
 (6, '14PG', '1/4&quot; Pea Gravel ', 'Per Ton', '70.95', NULL, 'ton', 'Ton/Yard', '1.25', 3),
-(7, 'AFBF', 'Arizona Flagstone - Buckskin', 'Ariz. Flag. Buckskin Per Lb', '0.23', 'Per Lb', 'lbs', NULL, NULL, 4),
-(8, 'AFBF', 'Arizona Flagstone - Buckskin', 'Ariz. Flagstone Buckskin Select', '450.00', 'Per ton', 'ton', NULL, NULL, 4),
-(9, '14-FB', '1/4&quot; Minus Fir Bark', 'Per U-Sack ', '4.50', NULL, 'u-sack', 'Ton/Yard', '0.16', 5),
+(7, 'AFBF', 'Arizona Flagstone - Buckskin', 'Per Lb', '0.23', 'Per Lb', 'lbs', NULL, NULL, 4),
+(8, 'AFBF', 'Arizona Flagstone - Buckskin', 'Per Ton', '450.00', 'Per ton', 'ton', NULL, NULL, 4),
+(9, '14-FB', '1/4&quot; Minus Fir Bark', 'Per U-Sack ', '4.50', NULL, 'sk', 'Ton/Yard', '0.16', 5),
 (10, '14-FB', '1/4&quot; Minus Fir Bark ', 'Per Yard', '75.50', NULL, 'ton', 'Ton/Yard', '0.16', 5),
-(11, '1OS', '#1 Olympia Sand Sack', 'Per U-Sack', '6.95', NULL, '', 'Ton/Yard', '1.25', 6),
-(12, '1OS', '#1 Olympia Sand', 'Per Ton', '99.50', 'Ton', '', 'Ton/Yard', '1.25', 6),
-(13, '2OS', '#2 Olympia Sand Sack', 'Per U-Sack', '6.95', NULL, '', 'Ton/Yard', '1.25', 7),
-(14, '2OS', '#2 Olympia Sand', 'Per Ton', '99.50', 'Ton', '', 'Ton/Yard', '1.25', 7),
-(15, 'CS', 'Concrete Sand / U Sack', 'Per U-Sack', '5.00', NULL, 'U-Sack', 'Ton/Yard', '1.25', 8),
+(11, '1OS', '#1 Olympia Sand Sack', 'Per U-Sack', '6.95', NULL, 'sk', 'Ton/Yard', '1.25', 6),
+(12, '1OS', '#1 Olympia Sand', 'Per Ton', '99.50', 'Ton', 'ton', 'Ton/Yard', '1.25', 6),
+(13, '2OS', '#2 Olympia Sand Sack', 'Per U-Sack', '6.95', NULL, 'sk', 'Ton/Yard', '1.25', 7),
+(14, '2OS', '#2 Olympia Sand', 'Per Ton', '99.50', 'Ton', 'ton', 'Ton/Yard', '1.25', 7),
+(15, 'CS', 'Concrete Sand / U Sack', 'Per U-Sack', '5.00', NULL, 'sk', 'Ton/Yard', '1.25', 8),
 (16, 'CS', 'Concrete Sand Per Ton ', 'Per Ton', '99.50', NULL, 'Ton', 'Ton/Yard', '1.25', 8);
 
 -- --------------------------------------------------------

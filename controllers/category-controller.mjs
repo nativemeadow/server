@@ -105,7 +105,7 @@ export const getProductsPerCategory = async (req, res, next) => {
     const { id } = req.params;
     const db = DbService.getDbServiceInstance();
     const query = `SELECT product.id, product.sku, product.title, product.description, product.image,
-            price.title as priceTitle, price.description as priceDescr, price.price, price.size, price.units, price.coverage, price.coverage_value 
+            price.id as priceKey, price.title as priceTitle, price.description as priceDescr, price.price, price.size, price.units, price.coverage, price.coverage_value 
         FROM product 
         JOIN price ON price.product = product.id   
         JOIN product_category ON product_category.product = product.id
@@ -132,6 +132,7 @@ export const getProductsPerCategory = async (req, res, next) => {
                     productArray.push(productObject);
                 }
                 pricingObject = {
+                    key: prod.priceKey,
                     title: prod.priceTitle,
                     description: prod.priceDescr,
                     price: prod.price,

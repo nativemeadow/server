@@ -5,7 +5,8 @@ import colors from 'colors';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 
-import categoryRoots from './routes/category-routes.mjs';
+import categoryRoutes from './routes/category-routes.mjs';
+import productRoutes from './routes/product-routes.mjs';
 
 dotenv.config();
 
@@ -16,7 +17,8 @@ app.use('/images', express.static(path.join('images')));
 
 const PORT = process.env.PORT || 5001
 
-app.use('/api/categories', categoryRoots);
+app.use('/api/categories', categoryRoutes);
+app.use('/api/products', productRoutes);
 
 app.listen(
     PORT,
