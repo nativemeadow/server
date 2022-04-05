@@ -42,7 +42,7 @@ export const getCategories = async (req, res, next) => {
 
     result
         .then(data => {
-            res.json({ data });
+            res.json(data);
         })
         .catch(err => {
             console.error(err);
@@ -58,7 +58,7 @@ export const getCategory = async (req, res, next) => {
 
     result
         .then(data => {
-            res.json({ data });
+            res.json(data);
         })
         .catch(err => {
             console.error(err);

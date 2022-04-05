@@ -47,7 +47,7 @@ export const getProduct = async (req, res, next) => {
                 productObject.pricing.push(pricingObject);
             });
 
-            res.json(productArray);
+            res.json(productObject);
         })
         .catch(err => {
             console.error(err);
