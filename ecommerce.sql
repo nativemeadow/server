@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 18, 2022 at 04:09 PM
+-- Generation Time: Apr 06, 2022 at 01:34 AM
 -- Server version: 8.0.27
 -- PHP Version: 8.1.2
 
@@ -117,22 +117,29 @@ CREATE TABLE `price` (
 --
 
 INSERT INTO `price` (`id`, `sku`, `title`, `description`, `price`, `size`, `units`, `coverage`, `coverage_value`, `product`) VALUES
-(1, 'C2BR', 'Class 2 Base Rock Sack', 'Per U-sack', '2.25', NULL, 'sk', 'Ton/Yard', '1.35', 1),
+(1, 'C2BR', 'Class 2 Base Rock U-sack', 'Per U-sack', '2.25', NULL, 'sk', 'Ton/Yard', '1.35', 1),
 (2, 'C2BR', 'Class 2 Base Rock', 'Per Ton', '31.50', NULL, 'ton', 'Ton/Yard', '1.35', 1),
-(3, '34C2P', 'Class 2 Base Rock Permeable Sack', 'Per U-Sack', '5.25', NULL, 'sk', 'Ton/Yard', '1.25', 2),
+(3, '34C2P', 'Class 2 Base Rock Permeable U-sack', 'Per U-Sack', '5.25', NULL, 'sk', 'Ton/Yard', '1.25', 2),
 (4, '34C2P', 'Class 2 Base Rock Permeable', 'Per Ton', '77.50', NULL, 'ton', 'Ton/Yard', '1.25', 2),
-(5, '14PG', '1/4&quot; Pea Gravel Sack', 'Per U-Sack', '5.50', NULL, 'sk', 'Ton/Yard', '1.25', 3),
+(5, '14PG', '1/4&quot; Pea Gravel U-sack', 'Per U-Sack', '5.50', NULL, 'sk', 'Ton/Yard', '1.25', 3),
 (6, '14PG', '1/4&quot; Pea Gravel ', 'Per Ton', '70.95', NULL, 'ton', 'Ton/Yard', '1.25', 3),
 (7, 'AFBF', 'Arizona Flagstone - Buckskin', 'Per Lb', '0.23', 'Per Lb', 'lbs', NULL, NULL, 4),
 (8, 'AFBF', 'Arizona Flagstone - Buckskin', 'Per Ton', '450.00', 'Per ton', 'ton', NULL, NULL, 4),
-(9, '14-FB', '1/4&quot; Minus Fir Bark', 'Per U-Sack ', '4.50', NULL, 'sk', 'Ton/Yard', '0.16', 5),
-(10, '14-FB', '1/4&quot; Minus Fir Bark ', 'Per Yard', '75.50', NULL, 'ton', 'Ton/Yard', '0.16', 5),
-(11, '1OS', '#1 Olympia Sand Sack', 'Per U-Sack', '6.95', NULL, 'sk', 'Ton/Yard', '1.25', 6),
-(12, '1OS', '#1 Olympia Sand', 'Per Ton', '99.50', 'Ton', 'ton', 'Ton/Yard', '1.25', 6),
-(13, '2OS', '#2 Olympia Sand Sack', 'Per U-Sack', '6.95', NULL, 'sk', 'Ton/Yard', '1.25', 7),
-(14, '2OS', '#2 Olympia Sand', 'Per Ton', '99.50', 'Ton', 'ton', 'Ton/Yard', '1.25', 7),
-(15, 'CS', 'Concrete Sand / U Sack', 'Per U-Sack', '5.00', NULL, 'sk', 'Ton/Yard', '1.25', 8),
-(16, 'CS', 'Concrete Sand Per Ton ', 'Per Ton', '99.50', NULL, 'Ton', 'Ton/Yard', '1.25', 8);
+(9, '14-FB', '1/4&quot; Minus Fir Bark U-sack', 'Per U-Sack ', '4.50', NULL, 'sk', 'Ton/Yard', '0.16', 5),
+(10, '14-FB', '1/4&quot; Minus Fir Bark ', 'Per Yard', '75.50', NULL, 'yd', 'Ton/Yard', '0.16', 5),
+(11, '1OS', '#1 Olympia Sand Sack U-sack', 'Per U-Sack', '7.50', NULL, 'sk', 'Ton/Yard', '1.25', 6),
+(12, '1OS', '#1 Olympia Sand', 'Per Ton', '103.95', 'Ton', 'ton', 'Ton/Yard', '1.25', 6),
+(13, '2OS', '#2 Olympia Sand U-sack', 'Per U-Sack', '7.50', NULL, 'sk', 'Ton/Yard', '1.25', 7),
+(14, '2OS', '#2 Olympia Sand', 'Per Ton', '103.95', 'Ton', 'ton', 'Ton/Yard', '1.25', 7),
+(15, 'CS', 'Concrete Sand U-sack', 'Per U-Sack', '5.00', NULL, 'sk', 'Ton/Yard', '1.25', 8),
+(16, 'CS', 'Concrete Sand Per Ton ', 'Per Ton', '99.50', NULL, 'ton', 'Ton/Yard', '1.25', 8),
+(17, 'CBSB', 'Connecticut Bluestone, True Blue full Pallet Only', 'Full Pallet', '950.00', 'pallet', 'pallet', '100-100 / Ton', NULL, 9),
+(18, 'AL', 'Azure Limestone', 'Per Lb', '0.60', 'lbs', 'lbs', '75 sqf / ton', NULL, 10),
+(19, 'AL', 'Azure Limestone', 'Per Ton', '1195.00', 'ton', 'ton', '75 sqf / ton', NULL, 10),
+(20, 'GBLT', 'Galaxy Black Limestone', 'Per Lb', '0.60', 'lbs', 'lbs', '75 sqf / ton', NULL, 11),
+(21, 'GBLT', 'Galaxy Black Limestone', 'Per Ton', '1195.00', 'ton', 'ton', '75 sqf / ton', NULL, 11),
+(22, 'LGS', 'Luna Grey Sandstone', 'Per Lb', '0.60', 'lbs', 'lbs', '75 sqf / ton', NULL, 12),
+(23, 'LGS', 'Luna Grey Sandstone', 'Per Ton', '1195.00', 'ton', 'ton', '75 sqf / ton', NULL, 12);
 
 -- --------------------------------------------------------
 
@@ -160,7 +167,11 @@ INSERT INTO `product` (`id`, `sku`, `title`, `description`, `image`) VALUES
 (5, '14-FB', '1/4&quot; - Fir Bark', '<p>1/4 &quot; Fir Bark is the smallest remaining particles from sifting the fir barks. Mix in with clay soil to loosen and aerate as an organic amendment. Provides moisture retention and aeration. Due to the small size of the bark, breaks down faster than Fine Redwood Amendment.</p><p>We sell the bark in one cubic foot bags, we supply the bags and you fill them. For large areas, you\'ll want to purchase by the cubic yard. We can load your truck or for a fee, have us deliver to your home or job site.</p>', '14-fur-bark.jpg'),
 (6, '1OS', '#1 Olympia Sand', '<p>Olympia Sands is used primarily for making mortar or stucco. However, Olympia Sand #1 is screened and washed. It is highly desirable for children\'s sandboxes, playgrounds, and the sand used for volleyball courts.</p><p>Lyngso Garden Materials sell #1 Olympia Sand in one cubic foot bags.  We supply the bags and you fill them! For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee, have us deliver to your jobsite. For orders over 20 tons please call us for direct pricing.</p><p>#1 Olympia Sand may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly.</p>', '1-olympia-sand.jpg'),
 (7, '2OS', '#2 Olympia Sand', '<p>Olympia Sand #2 is used for making plaster, mortar or stucco and can also be used for sandboxes.  It is a more coarse material than Olympia Sand #1, which provides it with better construction properties.</p><p>We sell both Olympia Sand #1 and Olympia Sand #2 in one cubic foot bags.  Lyngso will supply the bags and you can fill as many as you need. For larger areas, you\'ll want to purchase Olympia Sand by the ton. We can load your truck for you, or for a fee, you can use our rental truck and load the sand on your own, or have us deliver to you. For orders over 20 tons please call us for direct pricing.</p><p>#2 Olympia Sand may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly.</p>', '2-olympia-sand.jpg'),
-(8, 'CS', 'Concrete Sand', '<p>Concrete sand, also known as top sand, is a coarse washed and screened sand. It is used as a base for setting stones, pavers, and bricks. Concrete Sand packs together well and will not wash out as easily as finer sands.</p><p>We sell the Concrete Sand in one cubic foot bag, we supply the bags and you fill them. For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee, have us deliver to your jobsite. For orders over 20 tons please call us for direct pricing.</p>', 'concrete-sand.jpg');
+(8, 'CS', 'Concrete Sand', '<p>Concrete sand, also known as top sand, is a coarse washed and screened sand. It is used as a base for setting stones, pavers, and bricks. Concrete Sand packs together well and will not wash out as easily as finer sands.</p><p>We sell the Concrete Sand in one cubic foot bag, we supply the bags and you fill them. For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee, have us deliver to your jobsite. For orders over 20 tons please call us for direct pricing.</p>', 'concrete-sand.jpg'),
+(9, 'CBSB', 'Connecticut Bluestone, True Blue', '<ul>\r\n<li>Origin: North America</li>\r\n<li>Classification: Metamorphic Sandstone</li>\r\n<li>Color Range: Greys, Blues, Greens</li>\r\n<li>Finish: Natural Cleft</li>\r\nApplications: Walkways, Pathways, Patios, Accents</li>\r\n</ul>\r\n\r\n<p>Connecticut Bluestone is a classic East Coast paving stone that\'s been used for centuries, dating back to the 1800s. Denser sandstone that has been tested through the times.  A metamorphic sandstone with consistent blue-grey colors. Thickness ranges from 1 inch to 2 inches. Full pallet can weigh between 1.25 tons to 2.25 tons. This bluestone is standup select with sizes that vary from 1.5 sq. ft. to upwards of 20 sq. ft.</p>', 'connecticut-blue-stone.jpg'),
+(10, 'AL', 'Azure Limestone', '<ul>\r\n<li>Origin: North America</li>\r\n<li>Classification: Limestone</li>\r\n<li>Color Range: Blues, Grays</li>\r\n<li>Finishes: Natural Cleft</li>\r\nApplications: Walkways, Pathways, Patios, Accents</li>\r\n</ul>\r\n\r\n<p>Azure Limestone is a great alternative for Connecticut Bluestone True Blue. 2\" thickness.</p>', 'azure-limestone.jpg'),
+(11, 'GBLT', 'Galaxy Black Limestone', '<ul>\r\n<li>Origin: Asia</li>\r\n<li>Classification: Limestone</li>\r\n<li>Color Range: Blacks</li>\r\n<li>Finishes: Tumbled Natural Cleft</li>\r\n<li>Applications: Walkways, Pathways, Patios, Veneers, Accents</li>\r\n</ul>\r\n\r\n<p>Galaxy Black Tumbled flagstone are limestone with striking matte black hues. The flagstones are tumbled to soften the edges. Nominal 2\" thickness.</p>', NULL),
+(12, 'LGS', 'Luna Grey Sandstone', '<ul>\r\n<li>Origin: Asia</li>\r\n<li>Classification: Sandstone</li>\r\n<li>Color Range: Grays</li>\r\n<li>Finishes: Natural Cleft</li>\r\n<li>Application: Walkways, Pathways, Pavers, Veneers, Patios, Accents</li>\r\n</ul>\r\n\r\n<p>Luna Grey Flagstone are a light grey colored sandstone. 2” thickness.<p>', 'luna-gray-sandstone.jpg');
 
 -- --------------------------------------------------------
 
@@ -188,7 +199,11 @@ INSERT INTO `product_category` (`id`, `sku`, `product_order`, `category`, `produ
 (5, '14PG', 2, 20, 3),
 (6, '1OS', 1, 19, 6),
 (7, '2OS', 2, 19, 7),
-(8, 'CS', 3, 19, 8);
+(8, 'CS', 3, 19, 8),
+(9, 'CBSB', 2, 16, 9),
+(10, 'AL', 3, 16, 10),
+(11, 'GBLT', 5, 16, 11),
+(12, 'LGS', 6, 16, 12);
 
 -- --------------------------------------------------------
 
@@ -263,19 +278,19 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `price`
 --
 ALTER TABLE `price`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `product_category`
 --
 ALTER TABLE `product_category`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `units_of_measure`

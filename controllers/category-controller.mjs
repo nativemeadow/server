@@ -110,7 +110,7 @@ export const getProductsPerCategory = async (req, res, next) => {
         JOIN price ON price.product = product.id   
         JOIN product_category ON product_category.product = product.id
         JOIN category ON product_category.category = category.id
-        WHERE category.id = ?`
+        WHERE category.id = ? order by product.title`
 
     const result = db.getCategoryData(query, [id]);
 
