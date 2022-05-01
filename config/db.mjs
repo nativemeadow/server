@@ -26,12 +26,12 @@ class DbService {
         return instance ? instance : new DbService();
     }
 
-    async getCategoryData(query, filter) {
+    async getData(query, filter) {
         try {
             const params = filter ? filter : null;
             const response = await new Promise((resolve, reject) => {
 
-                connection.query(query, params, (err, results) => {
+                const queryStmt = connection.query(query, params, (err, results) => {
                     if (err) {
                         reject(new Error(err.message));
                     }

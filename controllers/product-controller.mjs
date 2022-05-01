@@ -13,7 +13,7 @@ export const getProduct = async (req, res, next) => {
         JOIN category ON product_category.category = category.id
         WHERE product.id = ?`
 
-    const result = db.getCategoryData(query, [id]);
+    const result = db.getData(query, [id]);
 
     result
         .then(data => {

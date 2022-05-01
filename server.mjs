@@ -7,11 +7,14 @@ import cors from 'cors';
 
 import categoryRoutes from './routes/category-routes.mjs';
 import productRoutes from './routes/product-routes.mjs';
+import userRoutes from './routes/user-routes.mjs';
+import errorHandlerMiddleware from './middleware/error-handler.js';
 
 dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use('/images', express.static(path.join('images')));
 
@@ -19,6 +22,9 @@ const PORT = process.env.PORT || 5001
 
 app.use('/api/categories', categoryRoutes);
 app.use('/api/products', productRoutes);
+app.use('/api/auth/', userRoutes);
+
+app.use(errorHandlerMiddleware);
 
 app.listen(
     PORT,

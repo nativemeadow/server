@@ -19,7 +19,7 @@ export const getHierarchy = async (req, res, next) => {
         SELECT parent_category, url_key, id, title, CONCAT('[', path, ']') as path FROM ancestors WHERE id = ? ORDER BY parent_category, id;
     `
 
-    const result = db.getCategoryData(query, [id]);
+    const result = db.getData(query, [id]);
 
     result
         .then(data => {
@@ -38,7 +38,7 @@ export const getCategories = async (req, res, next) => {
     const db = DbService.getDbServiceInstance();
     const query = 'SELECT id, title, url_key, image, category_order from category where parent_category is null order by category_order';
 
-    const result = db.getCategoryData(query);
+    const result = db.getData(query);
 
     result
         .then(data => {
@@ -54,7 +54,7 @@ export const getCategory = async (req, res, next) => {
     const db = DbService.getDbServiceInstance();
     const query = "SELECT * from category where id = ? UNION SELECT * FROM `category` where parent_category = ?";
 
-    const result = db.getCategoryData(query, [id, id]);
+    const result = db.getData(query, [id, id]);
 
     result
         .then(data => {
@@ -74,7 +74,7 @@ export const getCategoryProducts = async (req, res, next) => {
         JOIN category ON product_category.category = category.id
         WHERE category.id = ?`
 
-    const result = db.getCategoryData(query, [id]);
+    const result = db.getData(query, [id]);
 
     result
         .then(data => {
@@ -90,12 +90,13 @@ export async function getProductPricing(req, res, next) {
     const db = DbService.getDbServiceInstance();
     const query = `SELECT price.* FROM price where price.product = ?`;
 
-    const result = db.getCategoryData(query, [id]);
+    const result = db.getData(query, [id]);
 
-    result.then(data => {
-        res.json(data);
-    })
-        .catch(err => {
+    result
+        .then((data) => {
+            res.json(data);
+        })
+        .catch((err) => {
             console.error(err);
         });
 }
@@ -112,7 +113,7 @@ export const getProductsPerCategory = async (req, res, next) => {
         JOIN category ON product_category.category = category.id
         WHERE category.id = ? order by product.title`
 
-    const result = db.getCategoryData(query, [id]);
+    const result = db.getData(query, [id]);
 
     result
         .then(data => {
