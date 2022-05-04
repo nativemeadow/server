@@ -5,7 +5,8 @@
 	"main": "server.mjs",
 	"scripts": {
 		"start": "node ./server ,mjs",
-		"server": "nodemon ./server.mjs"
+		"server": "nodemon ./server.mjs",
+		"debug": "nodemon --inspect ./server.mjs"
 	},
 	"author": "",
 	"license": "ISC",

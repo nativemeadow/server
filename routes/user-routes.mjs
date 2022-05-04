@@ -14,11 +14,11 @@ router.post(
     [
         check('username')
             .not()
-            .isEmpty(),
+            .isEmpty().withMessage('username is required. please enter a username for your new account'),
         check('email')
             .normalizeEmail()
-            .isEmail(),
-        check('password').isLength({ min: 6 }),
+            .isEmail().withMessage('please enter a valid email for you account.'),
+        check('password').isLength({ min: 6 }).withMessage('please enter password with minimum of 6 character'),
         check(
             'passwordConfirmation',
             'passwordConfirmation field must have the same value as the password field',
@@ -28,25 +28,28 @@ router.post(
             .withMessage('passwordConfirmation field must have the same value as the password field'),
         check('firstName')
             .not()
-            .isEmpty(),
+            .isEmpty().withMessage('please enter your first name.'),
         check('lastName')
             .not()
-            .isEmpty(),
+            .isEmpty().withMessage('please enter your last name.'),
         check('phone')
             .not()
-            .isEmpty(),
+            .isEmpty().withMessage('please enter your phone number.'),
         check('address')
             .not()
-            .isEmpty(),
+            .isEmpty().withMessage('please enter your street address.'),
         check('city')
             .not()
-            .isEmpty(),
+            .isEmpty().withMessage('please enter your city.'),
+        check('country')
+            .not()
+            .isEmpty().withMessage('please enter your country.'),
         check('state')
             .not()
-            .isEmpty(),
+            .isEmpty().withMessage('please enter your state or province.'),
         check('postalCode')
             .not()
-            .isEmpty(),
+            .isEmpty().withMessage('please enter your zip or postal code.'),
     ],
     signup
 );

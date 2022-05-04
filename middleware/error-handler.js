@@ -103,6 +103,7 @@ function getHttpStatusCode({ error, response }) {
  * @param {Function} next - Express `next()` function
  */
 function errorHandlerMiddleware(error, request, response, next) {
+    debugger;
     const errorMessage = getErrorMessage(error);
 
     logErrorMessage(errorMessage);
@@ -128,7 +129,7 @@ function errorHandlerMiddleware(error, request, response, next) {
      * your application is running in production.
      */
     if (NODE_ENVIRONMENT !== "production") {
-        errorResponse.body = errorMessage.substring(1, errorMessage.indexOf('\n'));
+        errorResponse.body = errorMessage.substring(0, errorMessage.indexOf('\n'));
     }
 
     /**
