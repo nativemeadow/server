@@ -21,6 +21,19 @@ export const getUsers = async (req, res, next) => {
         });
 };
 
+export const getUser = async (req, res, next) => {
+    const { id } = req.params;
+    const db = DbService.getDbServiceInstance();
+    const query = 'SELECT * FROM users where id = ?';
+
+    try {
+        const result = await db.getData(query, [id]);
+        res.json(result);
+    } catch (err) {
+        console.error(err);
+    }
+}
+
 function getSignupErrors(errors) {
     console.log('Validation Errors:', errors);
     return errors.map(error => {

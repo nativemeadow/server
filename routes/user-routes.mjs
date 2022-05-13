@@ -1,12 +1,17 @@
 import express from 'express';
 import { check } from 'express-validator';
-import { getUsers, signup, login } from '../controllers/users-controller.mjs'
+import { getUsers, getUser, signup, login } from '../controllers/users-controller.mjs'
 
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
     console.log('get all users');
     getUsers(req, res, next);
+});
+
+router.get('/:id', (req, res, next) => {
+    console.log('get all users');
+    getUser(req, res, next);
 });
 
 router.post(
