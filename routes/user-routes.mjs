@@ -1,6 +1,6 @@
 import express from 'express';
 import { check } from 'express-validator';
-import { getUsers, getUser, signup, login } from '../controllers/users-controller.mjs'
+import { getUsers, getUser, signup, login, updateProfile } from '../controllers/users-controller.mjs'
 
 const router = express.Router();
 
@@ -60,5 +60,7 @@ router.post(
 );
 
 router.post('/login', login);
+
+router.put('/updateProfile', updateProfile);
 
 export default router;

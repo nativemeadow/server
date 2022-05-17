@@ -104,6 +104,55 @@ export const signup = async (req, res, next) => {
     });
 };
 
+async function authenticateUser(req, res, next) {
+    const db = DbService.getDbServiceInstance();
+    let query = 'SELECT id, username, password FROM users where username = ?';
+    const { username, password } = req.body;
+
+    let existingUser;
+
+    try {
+        existingUser = await db.getData(query, [username]);
+    } catch (err) {
+        const error = createHttpError(500, 'Failed to find user profile, please try again later.');
+        return next(error);
+    }
+
+    if (existingUser.length === 0) {
+        const error = createHttpError(403, 'Invalid credentials, could not log you in.');
+        return next(error);
+    }
+
+    const user = existingUser[0];
+
+    let isValidPassword = false;
+    try {
+        isValidPassword = await bcrytp.compare(password, user.password);
+    } catch (err) {
+        const error = createHttpError(500, `Error validating password: ${err}`);
+        return next(error);
+    }
+
+    if (!isValidPassword) {
+        const error = createHttpError(403, `Invalid credential. could not log you in`);
+        return next(error);
+    }
+
+    let token;
+    try {
+        token = jwt.sign(
+            { userId: user.username, email: user.email },
+            process.env.JWT_KEY,
+            { expiresIn: '1h' }
+        );
+    } catch (err) {
+        const error = createHttpError(500, 'Updating profile failed authentication, please try again later.');
+        return next(error);
+    }
+
+    return user;
+}
+
 export const login = async (req, res, next) => {
     const db = DbService.getDbServiceInstance();
     let query = 'SELECT id, username, password FROM users where username = ?';
@@ -155,4 +204,18 @@ export const login = async (req, res, next) => {
         email: user.email,
         token: token,
     });
+
+};
+
+export const updateProfile = async (req, res, next) => {
+    const db = DbService.getDbServiceInstance();
+
+    let user = authenticateUser(req, res, next);
+
+    res.status(201).json({
+        userId: user.username,
+        email: user.email,
+        token: token,
+    });
+
 };
