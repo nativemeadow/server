@@ -3,6 +3,7 @@ import path from 'path';
 import dotenv from 'dotenv';
 import colors from 'colors';
 import bodyParser from 'body-parser';
+import corsOptions from './config/corsOptions.mjs';
 import cors from 'cors';
 
 import categoryRoutes from './routes/category-routes.mjs';
@@ -15,7 +16,7 @@ dotenv.config();
 const app = express();
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors());
+app.use(cors(corsOptions));
 app.use('/images', express.static(path.join('images')));
 
 const PORT = process.env.PORT || 5001

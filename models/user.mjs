@@ -1,11 +1,12 @@
 import uuid from 'uuidv4';
+import { v4 as uuidv4 } from 'uuid';
 
 class User {
   constructor(props) {
     Object.assign(this, props);
 
     if (!props.id) {
-      this.id = uuid.uuid();
+      this.id = uuidv4();
     }
 
     // rename keys for database update

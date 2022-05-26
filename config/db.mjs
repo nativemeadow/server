@@ -33,7 +33,9 @@ class DbService {
 
                 const queryStmt = connection.query(query, params, (err, results) => {
                     if (err) {
-                        reject(new Error(err.message));
+                        reject((error) => {
+                            throw new Error(err.message);
+                        });
                     }
                     resolve(results);
                 })
