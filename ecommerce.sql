@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 18, 2022 at 10:47 PM
+-- Generation Time: May 26, 2022 at 09:18 PM
 -- Server version: 8.0.27
 -- PHP Version: 8.1.2
 
@@ -122,6 +122,7 @@ CREATE TABLE `price` (
   `sku` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `title` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `description` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `image` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `price` decimal(10,2) NOT NULL,
   `size` varchar(100) DEFAULT NULL,
   `units` text NOT NULL,
@@ -134,77 +135,112 @@ CREATE TABLE `price` (
 -- Dumping data for table `price`
 --
 
-INSERT INTO `price` (`id`, `sku`, `title`, `description`, `price`, `size`, `units`, `coverage`, `coverage_value`, `product`) VALUES
-(1, 'C2BR', 'Class 2 Base Rock U-sack', 'Per U-sack', '2.25', NULL, 'sk', 'Ton/Yard', '1.35', 1),
-(2, 'C2BR', 'Class 2 Base Rock', 'Per Ton', '31.50', NULL, 'ton', 'Ton/Yard', '1.35', 1),
-(3, '34C2P', 'Class 2 Base Rock Permeable U-sack', 'Per U-Sack', '5.25', NULL, 'sk', 'Ton/Yard', '1.25', 2),
-(4, '34C2P', 'Class 2 Base Rock Permeable', 'Per Ton', '77.50', NULL, 'ton', 'Ton/Yard', '1.25', 2),
-(5, '14PG', '1/4&quot; Pea Gravel U-sack', 'Per U-Sack', '5.50', NULL, 'sk', 'Ton/Yard', '1.25', 3),
-(6, '14PG', '1/4&quot; Pea Gravel ', 'Per Ton', '70.95', NULL, 'ton', 'Ton/Yard', '1.25', 3),
-(7, 'AFBF', 'Arizona Flagstone - Buckskin', 'Per Lb', '0.23', 'Per Lb', 'lbs', NULL, NULL, 4),
-(8, 'AFBF', 'Arizona Flagstone - Buckskin', 'Per Ton', '450.00', 'Per ton', 'ton', NULL, NULL, 4),
-(9, '14-FB', '1/4&quot; Minus Fir Bark U-sack', 'Per U-Sack ', '4.50', NULL, 'sk', 'Ton/Yard', '0.16', 5),
-(10, '14-FB', '1/4&quot; Minus Fir Bark ', 'Per Yard', '75.50', NULL, 'yd', 'Ton/Yard', '0.16', 5),
-(11, '1OS', '#1 Olympia Sand Sack U-sack', 'Per U-Sack', '7.50', NULL, 'sk', 'Ton/Yard', '1.25', 6),
-(12, '1OS', '#1 Olympia Sand', 'Per Ton', '103.95', 'Ton', 'ton', 'Ton/Yard', '1.25', 6),
-(13, '2OS', '#2 Olympia Sand U-sack', 'Per U-Sack', '7.50', NULL, 'sk', 'Ton/Yard', '1.25', 7),
-(14, '2OS', '#2 Olympia Sand', 'Per Ton', '103.95', 'Ton', 'ton', 'Ton/Yard', '1.25', 7),
-(15, 'CS', 'Concrete Sand U-sack', 'Per U-Sack', '5.00', NULL, 'sk', 'Ton/Yard', '1.25', 8),
-(16, 'CS', 'Concrete Sand Per Ton ', 'Per Ton', '99.50', NULL, 'ton', 'Ton/Yard', '1.25', 8),
-(17, 'CBSB', 'Connecticut Bluestone, True Blue full Pallet Only', 'Full Pallet', '950.00', 'pallet', 'pallet', '100-100 / Ton', NULL, 9),
-(18, 'AL', 'Azure Limestone', 'Per Lb', '0.60', 'lbs', 'lbs', '75 sqf / ton', NULL, 10),
-(19, 'AL', 'Azure Limestone', 'Per Ton', '1195.00', 'ton', 'ton', '75 sqf / ton', NULL, 10),
-(20, 'GBLT', 'Galaxy Black Limestone', 'Per Lb', '0.60', 'lbs', 'lbs', '75 sqf / ton', NULL, 11),
-(21, 'GBLT', 'Galaxy Black Limestone', 'Per Ton', '1195.00', 'ton', 'ton', '75 sqf / ton', NULL, 11),
-(22, 'LGS', 'Luna Grey Sandstone', 'Per Lb', '0.60', 'lbs', 'lbs', '75 sqf / ton', NULL, 12),
-(23, 'LGS', 'Luna Grey Sandstone', 'Per Ton', '1195.00', 'ton', 'ton', '75 sqf / ton', NULL, 12),
-(24, '516RL', '5/16&quot; Lava Sack', 'Per U-Sack', '6.50', NULL, 'sk', 'Lb/yd', '0.65', 13),
-(25, '14PG', '5/16&quot; Lava Aprox.1350 Lb/yd ', 'Per Yard', '109.95', NULL, 'yd', 'Lb/yd', '0.65', 13),
-(26, 'LIGNA PEAT', 'U-sack Ligna Peat', 'Per U-Sack', '3.95', NULL, 'sk', 'Lb/yd', '0.15', 14),
-(27, 'LIGNA PEAT', 'Ligna Peat Amendment', 'Per U-Sack', '57.95', NULL, 'yd', 'Lb/yd', '0.15', 14),
-(28, 'ORGANIC-AMENDMENT', 'U-sack Amendment Mix', 'Per U-Sack', '3.25', NULL, 'sk', 'Lb/yd', '0.65', 15),
-(29, 'ORGANIC-AMENDMENT', 'Amendment Mix', 'Per Yard', '41.50', NULL, 'yd', 'Lb/yd', '0.15', 15),
-(30, 'RS', 'U Sack Redwood Sawdust', 'Per U-Sack', '3.50', NULL, 'sk', 'Lb/yd', '0.29', 16),
-(31, 'RS', 'Redwood Sawdust ', 'Per Yard', '42.50', NULL, 'yd', 'Lb/yd', '0.15', 16),
-(32, 'COMPOST-MULCH', 'Composted Mulch - Limited Quantity', 'Per U-Sack', '3.00', NULL, 'sk', 'Lb/yd', '0.29', 17),
-(33, 'COMPOST-MULCH', 'Composted Mulch', 'Per Yard', '78.00', NULL, 'yd', 'Lb/yd', '0.15', 17),
-(34, 'GRB', 'Ground Redwood Bark Sack', 'Per U-Sack', '3.75', NULL, 'sk', 'Lb/yd', '0.16', 18),
-(35, 'GRB', 'Ground Redwood Bark Double Grind ', 'Per Yard', '51.00', NULL, 'yd', 'Lb/yd', '0.15', 18),
-(36, 'MA CHIP', 'U-sack Mahogany Chip', 'Per U-Sack', '4.35', NULL, 'sk', 'Lb/yd', '0.16', 19),
-(37, 'MA CHIP', 'Mahogany Chip', 'Per Yard', '71.50', NULL, 'yd', 'Lb/yd', '0.16', 19),
-(38, 'MMFB', 'Mini Mulch Fir Bark Sack', 'Per U-Sack', '4.95', NULL, 'sk', 'Lb/yd', '0.25', 20),
-(39, 'MMFB', 'Mini Mulch Fir Bark', 'Per Yard', '87.50', NULL, 'yd', 'Lb/yd', '0.25', 20),
-(40, 'MOCHA CHIP', 'U-sack Mocha Chip 1cf Bag ', 'Per U-Sack', '4.20', NULL, 'sk', 'Lb/yd', '0.16', 21),
-(41, 'MOCHA CHIP', 'Mocha Chip', 'Per Yard', '59.50', NULL, 'yd', 'Lb/yd', '0.16', 21),
-(42, 'PF', 'U-sack Playground Fibe', 'Per U-Sack', '4.25', NULL, 'sk', 'Lb/yd', '0.16', 22),
-(43, 'PF', 'Playground Fiber', 'Per Yard', '73.75', NULL, 'yd', 'Lb/yd', '0.16', 22),
-(44, 'PAM', 'U-sack Premium Arbor Mulch', 'Per U-Sack', '2.75', NULL, 'sk', 'Lb/yd', '0.16', 23),
-(45, 'PAM', 'Premium Arbor Mulch', 'Per Yard', '36.00', NULL, 'yd', 'Lb/yd', '0.16', 23),
-(46, 'SCB', 'Shredded Cedar Bark', 'Per U-Sack', '3.85', NULL, 'sk', 'Lb/yd', '0.16', 24),
-(47, 'SCB', 'Shredded Cedar Bark', 'Per Yard', '55.50', NULL, 'yd', 'Lb/yd', '0.16', 24),
-(48, 'SFB', 'Small Fir Bark Sack', 'Per U-Sack', '4.95', NULL, 'sk', 'Lb/yd', '0.26', 25),
-(49, 'SFB', 'Small Fir Bark 3/4\"-1-1/2\"', 'Per Yard', '87.50', NULL, 'yd', 'Lb/yd', '0.16', 25),
-(50, 'WOB', 'U-sack Walk On Bark', 'Per U-Sack', '4.45', NULL, 'sk', 'Lb/yd', '0.25', 26),
-(51, 'WOB', 'Walk On Bark', 'Per Yard', '71.00', NULL, 'yd', 'Lb/yd', '0.25', 26),
-(52, 'TWC', 'U-sack Wood Chips', 'Per U-Sack', '3.45', NULL, 'sk', 'Lb/yd', '0.16', 27),
-(53, 'TWC', 'Wood Chips ', 'Per Yard', '42.75', NULL, 'yd', 'Lb/yd', '0.16', 27),
-(54, 'AACT', 'Actively Aerated Compost Tea', 'Per GL', '12.00', NULL, 'gl', 'gl', NULL, 28),
-(55, 'BBBC', 'Bu\'s Blend Compost Pre Bag 1 Cf', 'Per Cubic Foot', '19.99', NULL, 'Cubic Foot', 'cf', NULL, 29),
-(56, 'DDOC', 'Double Doody Organic Compost', 'EA', '13.50', NULL, 'EA', 'cf', NULL, 30),
-(57, 'HOWC', 'Heritage Organics Worm Castings', 'EA', '24.00', NULL, 'EA', 'cf', NULL, 31),
-(58, 'SCCOB', 'Seacoast Biodynamic Compost ', 'EA', '26.50', NULL, 'EA', 'cf', NULL, 32),
-(59, 'OBULL', 'Oregon Bull Organic Aged Humus ', 'Per U-Sack', '12.50', NULL, 'sk', 'Lb/yd', '0.75', 33),
-(60, 'OBULL', 'Oregon Bull Organic Aged Humus', 'Per Yard', '255.00', NULL, 'yd', 'Lb/yd', '0.75', 33),
-(61, 'OAM', 'U-sack Amendment Mix', 'Per U-Sack', '3.25', NULL, 'sk', 'Lb/yd', '0.16', 34),
-(62, 'OAM', 'Amendment Mix', 'Per Yard', '41.00', NULL, 'yd', 'Lb/yd', '0.75', 34),
-(63, 'DIESTEL', 'Diestel Structured Compost U-sk', 'Per U-Sack', '7.95', NULL, 'sk', 'Lb/yd', '0.50', 35),
-(64, 'DIESTEL', 'Diestel Structured Compost', 'Per Yard', '162.95', NULL, 'yd', 'Lb/yd', '0.50', 35),
-(65, 'OC', 'U-sk Garden Compost /green Waste', 'Per U-Sack', '3.50', NULL, 'sk', 'Lb/yd', '0.50', 36),
-(66, 'OC', 'Garden Compost / Green Waste', 'Per Yard', '40.50', NULL, 'yd', 'Lb/yd', '0.50', 36),
-(67, 'WEBB', 'U-sack Webb Ranch Compost ', 'Per U-Sack', '6.95', NULL, 'sk', 'Lb/yd', '0.50', 37),
-(68, 'WEBB', 'Webb Ranch Organic Compost ', 'Per Yard', '140.95', NULL, 'yd', 'Lb/yd', '0.50', 37),
-(69, 'BIOSWALE', 'Biotreatment Soil Mix', 'Per Yard', '72.00', NULL, 'yd', 'Lb/yd', '0.50', 38),
-(70, 'BBBPS', 'Baby Bu Potting Mix 1 1/2 Cu Ft', 'Cubic Foot', '72.00', NULL, 'cu ft', 'cu ft', '0.50', 39);
+INSERT INTO `price` (`id`, `sku`, `title`, `description`, `image`, `price`, `size`, `units`, `coverage`, `coverage_value`, `product`) VALUES
+(1, 'C2BR', 'Class 2 Base Rock U-sack', 'Per U-sack', NULL, '2.25', NULL, 'sk', 'Ton/Yard', '1.35', 1),
+(2, 'C2BR', 'Class 2 Base Rock', 'Per Ton', NULL, '31.50', NULL, 'ton', 'Ton/Yard', '1.35', 1),
+(3, '34C2P', 'Class 2 Base Rock Permeable U-sack', 'Per U-Sack', NULL, '5.25', NULL, 'sk', 'Ton/Yard', '1.25', 2),
+(4, '34C2P', 'Class 2 Base Rock Permeable', 'Per Ton', NULL, '77.50', NULL, 'ton', 'Ton/Yard', '1.25', 2),
+(5, '14PG', '1/4&quot; Pea Gravel U-sack', 'Per U-Sack', NULL, '6.95', NULL, 'sk', 'Ton/Yard', '1.25', 3),
+(6, '14PG', '1/4&quot; Pea Gravel ', 'Per Ton', NULL, '84.95', NULL, 'ton', 'Ton/Yard', '1.25', 3),
+(7, 'AFBF', 'Arizona Flagstone - Buckskin', 'Per Lb', NULL, '0.23', 'Per Lb', 'lbs', NULL, NULL, 4),
+(8, 'AFBF', 'Arizona Flagstone - Buckskin', 'Per Ton', NULL, '450.00', 'Per ton', 'ton', NULL, NULL, 4),
+(9, '14-FB', '1/4&quot; Minus Fir Bark U-sack', 'Per U-Sack ', NULL, '4.50', NULL, 'sk', 'Ton/Yard', '0.16', 5),
+(10, '14-FB', '1/4&quot; Minus Fir Bark ', 'Per Yard', NULL, '75.50', NULL, 'yd', 'Ton/Yard', '0.16', 5),
+(11, '1OS', '#1 Olympia Sand Sack U-sack', 'Per U-Sack', NULL, '7.50', NULL, 'sk', 'Ton/Yard', '1.25', 6),
+(12, '1OS', '#1 Olympia Sand', 'Per Ton', NULL, '103.95', 'Ton', 'ton', 'Ton/Yard', '1.25', 6),
+(13, '2OS', '#2 Olympia Sand U-sack', 'Per U-Sack', NULL, '7.50', NULL, 'sk', 'Ton/Yard', '1.25', 7),
+(14, '2OS', '#2 Olympia Sand', 'Per Ton', NULL, '103.95', 'Ton', 'ton', 'Ton/Yard', '1.25', 7),
+(15, 'CS', 'Concrete Sand U-sack', 'Per U-Sack', NULL, '5.00', NULL, 'sk', 'Ton/Yard', '1.25', 8),
+(16, 'CS', 'Concrete Sand Per Ton ', 'Per Ton', NULL, '99.50', NULL, 'ton', 'Ton/Yard', '1.25', 8),
+(17, 'CBSB', 'Connecticut Bluestone, True Blue full Pallet Only', 'Full Pallet', NULL, '950.00', 'pallet', 'pallet', '100-100 / Ton', NULL, 9),
+(18, 'AL', 'Azure Limestone', 'Per Lb', NULL, '0.60', 'lbs', 'lbs', '75 sqf / ton', NULL, 10),
+(19, 'AL', 'Azure Limestone', 'Per Ton', NULL, '1195.00', 'ton', 'ton', '75 sqf / ton', NULL, 10),
+(20, 'GBLT', 'Galaxy Black Limestone', 'Per Lb', NULL, '0.60', 'lbs', 'lbs', '75 sqf / ton', NULL, 11),
+(21, 'GBLT', 'Galaxy Black Limestone', 'Per Ton', NULL, '1195.00', 'ton', 'ton', '75 sqf / ton', NULL, 11),
+(22, 'LGS', 'Luna Grey Sandstone', 'Per Lb', NULL, '0.60', 'lbs', 'lbs', '75 sqf / ton', NULL, 12),
+(23, 'LGS', 'Luna Grey Sandstone', 'Per Ton', NULL, '1195.00', 'ton', 'ton', '75 sqf / ton', NULL, 12),
+(24, '516RL', '5/16&quot; Lava Sack', 'Per U-Sack', NULL, '6.50', NULL, 'sk', 'Lb/yd', '0.65', 13),
+(25, '14PG', '5/16&quot; Lava Aprox.1350 Lb/yd ', 'Per Yard', NULL, '109.95', NULL, 'yd', 'Lb/yd', '0.65', 13),
+(26, 'LIGNA PEAT', 'U-sack Ligna Peat', 'Per U-Sack', NULL, '3.95', NULL, 'sk', 'Lb/yd', '0.15', 14),
+(27, 'LIGNA PEAT', 'Ligna Peat Amendment', 'Per U-Sack', NULL, '57.95', NULL, 'yd', 'Lb/yd', '0.15', 14),
+(28, 'ORGANIC-AMENDMENT', 'U-sack Amendment Mix', 'Per U-Sack', NULL, '3.25', NULL, 'sk', 'Lb/yd', '0.65', 15),
+(29, 'ORGANIC-AMENDMENT', 'Amendment Mix', 'Per Yard', NULL, '41.50', NULL, 'yd', 'Lb/yd', '0.15', 15),
+(30, 'RS', 'U Sack Redwood Sawdust', 'Per U-Sack', NULL, '3.50', NULL, 'sk', 'Lb/yd', '0.29', 16),
+(31, 'RS', 'Redwood Sawdust ', 'Per Yard', NULL, '42.50', NULL, 'yd', 'Lb/yd', '0.15', 16),
+(32, 'COMPOST-MULCH', 'Composted Mulch - Limited Quantity', 'Per U-Sack', NULL, '3.00', NULL, 'sk', 'Lb/yd', '0.29', 17),
+(33, 'COMPOST-MULCH', 'Composted Mulch', 'Per Yard', NULL, '78.00', NULL, 'yd', 'Lb/yd', '0.15', 17),
+(34, 'GRB', 'Ground Redwood Bark Sack', 'Per U-Sack', NULL, '3.75', NULL, 'sk', 'Lb/yd', '0.16', 18),
+(35, 'GRB', 'Ground Redwood Bark Double Grind ', 'Per Yard', NULL, '51.00', NULL, 'yd', 'Lb/yd', '0.15', 18),
+(36, 'MA CHIP', 'U-sack Mahogany Chip', 'Per U-Sack', NULL, '4.35', NULL, 'sk', 'Lb/yd', '0.16', 19),
+(37, 'MA CHIP', 'Mahogany Chip', 'Per Yard', NULL, '71.50', NULL, 'yd', 'Lb/yd', '0.16', 19),
+(38, 'MMFB', 'Mini Mulch Fir Bark Sack', 'Per U-Sack', NULL, '4.95', NULL, 'sk', 'Lb/yd', '0.25', 20),
+(39, 'MMFB', 'Mini Mulch Fir Bark', 'Per Yard', NULL, '87.50', NULL, 'yd', 'Lb/yd', '0.25', 20),
+(40, 'MOCHA CHIP', 'U-sack Mocha Chip 1cf Bag ', 'Per U-Sack', NULL, '4.20', NULL, 'sk', 'Lb/yd', '0.16', 21),
+(41, 'MOCHA CHIP', 'Mocha Chip', 'Per Yard', NULL, '59.50', NULL, 'yd', 'Lb/yd', '0.16', 21),
+(42, 'PF', 'U-sack Playground Fibe', 'Per U-Sack', NULL, '4.25', NULL, 'sk', 'Lb/yd', '0.16', 22),
+(43, 'PF', 'Playground Fiber', 'Per Yard', NULL, '73.75', NULL, 'yd', 'Lb/yd', '0.16', 22),
+(44, 'PAM', 'U-sack Premium Arbor Mulch', 'Per U-Sack', NULL, '2.75', NULL, 'sk', 'Lb/yd', '0.16', 23),
+(45, 'PAM', 'Premium Arbor Mulch', 'Per Yard', NULL, '36.00', NULL, 'yd', 'Lb/yd', '0.16', 23),
+(46, 'SCB', 'Shredded Cedar Bark', 'Per U-Sack', NULL, '3.85', NULL, 'sk', 'Lb/yd', '0.16', 24),
+(47, 'SCB', 'Shredded Cedar Bark', 'Per Yard', NULL, '55.50', NULL, 'yd', 'Lb/yd', '0.16', 24),
+(48, 'SFB', 'Small Fir Bark Sack', 'Per U-Sack', NULL, '4.95', NULL, 'sk', 'Lb/yd', '0.26', 25),
+(49, 'SFB', 'Small Fir Bark 3/4\"-1-1/2\"', 'Per Yard', NULL, '87.50', NULL, 'yd', 'Lb/yd', '0.16', 25),
+(50, 'WOB', 'U-sack Walk On Bark', 'Per U-Sack', NULL, '4.45', NULL, 'sk', 'Lb/yd', '0.25', 26),
+(51, 'WOB', 'Walk On Bark', 'Per Yard', NULL, '71.00', NULL, 'yd', 'Lb/yd', '0.25', 26),
+(52, 'TWC', 'U-sack Wood Chips', 'Per U-Sack', NULL, '3.45', NULL, 'sk', 'Lb/yd', '0.16', 27),
+(53, 'TWC', 'Wood Chips ', 'Per Yard', NULL, '42.75', NULL, 'yd', 'Lb/yd', '0.16', 27),
+(54, 'AACT', 'Actively Aerated Compost Tea', 'Per GL', NULL, '12.00', NULL, 'gl', 'gl', NULL, 28),
+(55, 'BBBC', 'Bu\'s Blend Compost Pre Bag 1 Cf', 'Per Cubic Foot', NULL, '19.99', NULL, 'Cubic Foot', 'cf', NULL, 29),
+(56, 'DDOC', 'Double Doody Organic Compost', 'EA', NULL, '13.50', NULL, 'EA', 'cf', NULL, 30),
+(57, 'HOWC', 'Heritage Organics Worm Castings', 'EA', NULL, '24.00', NULL, 'EA', 'cf', NULL, 31),
+(58, 'SCCOB', 'Seacoast Biodynamic Compost ', 'EA', NULL, '26.50', NULL, 'EA', 'cf', NULL, 32),
+(59, 'OBULL', 'Oregon Bull Organic Aged Humus ', 'Per U-Sack', NULL, '12.50', NULL, 'sk', 'Lb/yd', '0.75', 33),
+(60, 'OBULL', 'Oregon Bull Organic Aged Humus', 'Per Yard', NULL, '255.00', NULL, 'yd', 'Lb/yd', '0.75', 33),
+(61, 'OAM', 'U-sack Amendment Mix', 'Per U-Sack', NULL, '3.25', NULL, 'sk', 'Lb/yd', '0.16', 34),
+(62, 'OAM', 'Amendment Mix', 'Per Yard', NULL, '41.00', NULL, 'yd', 'Lb/yd', '0.75', 34),
+(63, 'DIESTEL', 'Diestel Structured Compost U-sk', 'Per U-Sack', NULL, '7.95', NULL, 'sk', 'Lb/yd', '0.50', 35),
+(64, 'DIESTEL', 'Diestel Structured Compost', 'Per Yard', NULL, '162.95', NULL, 'yd', 'Lb/yd', '0.50', 35),
+(65, 'OC', 'U-sk Garden Compost /green Waste', 'Per U-Sack', NULL, '3.50', NULL, 'sk', 'Lb/yd', '0.50', 36),
+(66, 'OC', 'Garden Compost / Green Waste', 'Per Yard', NULL, '40.50', NULL, 'yd', 'Lb/yd', '0.50', 36),
+(67, 'WEBB', 'U-sack Webb Ranch Compost ', 'Per U-Sack', NULL, '6.95', NULL, 'sk', 'Lb/yd', '0.50', 37),
+(68, 'WEBB', 'Webb Ranch Organic Compost ', 'Per Yard', NULL, '140.95', NULL, 'yd', 'Lb/yd', '0.50', 37),
+(69, 'BIOSWALE', 'Biotreatment Soil Mix', 'Per Yard', NULL, '72.00', NULL, 'yd', 'Lb/yd', '0.50', 38),
+(70, 'BBBPS', 'Baby Bu Potting Mix 1 1/2 Cu Ft', 'Cubic Foot', NULL, '72.00', NULL, 'cu ft', 'cu ft', '0.50', 39),
+(71, 'DEANPP', 'All Natural Potting Soil 1.5 Cu Ft', 'Cubic Foot', NULL, '19.00', NULL, 'cu ft', 'cu ft', '0.50', 40),
+(72, 'ES', 'Essential Soil Blend Usack', 'Per U-sack', NULL, '5.00', NULL, 'sk', 'ton/yd', '0.95', 41),
+(73, 'ES', 'Essential Soil Blend', 'Per Yard', NULL, '99.99', NULL, 'yd', 'ton/yd', '0.95', 41),
+(74, 'LM', 'U-sack Landscape Mix', 'Per U-sack', NULL, '3.75', NULL, 'sk', 'ton/yd', '0.85', 42),
+(75, 'LM', 'Landscape Mix', 'Per Yard', NULL, '62.00', NULL, 'yd', 'ton/yd', '0.85', 42),
+(76, 'OAM', 'U-sack Amendment Mix', 'Per U-sack', NULL, '3.25', NULL, 'sk', 'ton/yd', '0.85', 43),
+(77, 'OAM', 'Amendment Mix', 'Per Yard', NULL, '41.50', NULL, 'yd', 'ton/yd', '0.85', 43),
+(78, '38PG', '3/8&quot; Pea Gravel U-sack', 'Per U-Sack', NULL, '6.95', NULL, 'sk', 'Ton/Yard', '1.25', 44),
+(79, '38PG', '3/8&quot; Pea Gravel ', 'Per Ton', NULL, '84.95', NULL, 'ton', 'Ton/Yard', '1.25', 44),
+(80, '34CDR', '3/4\" Crushed Drain Rock/u-sack', 'Per U-Sack', NULL, '5.95', NULL, 'sk', 'Ton/Yard', '1.25', 45),
+(81, '34CDR', '3/4\" Crushed D/r', 'Per Ton', NULL, '77.95', NULL, 'ton', 'Ton/Yard', '1.25', 45),
+(82, 'BBF', 'U Sack Black Basalt Fines', 'Per U-Sack', NULL, '8.95', NULL, 'sk', 'Ton/Yard', '1.50', 46),
+(83, 'BBF', 'Black Basalt Fines', 'Per Ton', NULL, '118.50', NULL, 'ton', 'Ton/Yard', '1.50', 46),
+(84, 'BBFS', 'Black Basalt Fines Stabilized', 'Per Ton', NULL, '168.00', NULL, 'ton', 'Ton/Yard', '1.50', 47),
+(85, 'BF', 'Blue Fines U-sack', 'Per U-Sack', NULL, '6.95', NULL, 'sk', 'Ton/Yard', '1.50', 48),
+(86, 'BF', 'Blue Fines', 'Per Ton', NULL, '91.50', NULL, 'ton', 'Ton/Yard', '1.50', 48),
+(87, 'BFS', 'Blue Fines Stabilized', 'Per Ton', NULL, '158.00', NULL, 'ton', 'Ton/Yard', '1.50', 49),
+(88, 'DBF', 'Desert Brown Fines', 'Per Ton', NULL, '350.00', NULL, 'ton', 'Ton/Yard', '1.50', 50),
+(89, 'SGPF', 'U-sack Sunset Gold Path Fines', 'Per U-Sack', NULL, '8.95', NULL, 'sk', 'Ton/Yard', '1.40', 51),
+(90, 'SGPF', 'Sunset Gold Path Fines', 'Per Ton', NULL, '128.95', NULL, 'ton', 'Ton/Yard', '1.40', 51),
+(91, 'SGPFS', 'Sunset Gold Path Fines Stabilized', 'Per Ton', NULL, '168.00', NULL, 'ton', 'Ton/Yard', '1.40', 52),
+(92, 'SGPF', 'U-sk Stabilized Sunset Gold Fine', 'Per U-Sack', NULL, '9.75', NULL, 'sk', 'Ton/Yard', '1.40', 52),
+(93, 'ASTC', 'U-sack Autumn Sl Tumbled Chips', 'Per U-Sack', NULL, '68.50', NULL, 'sk', 'Ton/Yard', '1.25', 53),
+(94, 'ASTC', '1.5\"-7\" Autumn Slate Tumble Chip', 'Per Ton', NULL, '1750.00', NULL, 'ton', 'Ton/Yard', '1.40', 53),
+(95, 'MBTSC', 'U-sack Midnight Blk Tumble Chips ', 'Per U-Sack', NULL, '68.50', NULL, 'sk', 'Ton/Yard', '1.25', 54),
+(96, 'MBTSC', 'Midnight Blk Tmbl Chips 1.5\"-7', 'Per Ton', NULL, '1750.00', NULL, 'ton', 'Ton/Yard', '1.40', 54),
+(97, '1278GGR', 'U-sack Glacier Green 1/2\"-7/8\"', 'Per U-Sack', NULL, '20.95', NULL, 'sk', 'Ton/Yard', '1.25', 55),
+(98, '1278GGR', 'Glacier Green Rock 1/2\"-7/8\"', 'Per Ton', NULL, '374.95', NULL, 'ton', 'Ton/Yard', '1.40', 55),
+(99, '38CBB', 'Crushed Black Basalt U-sack ', 'Per U-Sack', NULL, '7.95', NULL, 'sk', 'Ton/Yard', '1.25', 56),
+(100, '38CBB', '3/8\" Crushed Black Basalt Rock', '3/8\"', '3-8CrushedBlackBasalt.jpg', '111.50', NULL, 'ton', 'Ton/Yard', '1.25', 56),
+(101, '38CBB', '1/4\" Crushed Black Basalt Rock', '1/4\"', NULL, '111.50', NULL, 'ton', 'Ton/Yard', '1.25', 56),
+(102, '18DG', '1/8\" Desert Gold Sack ', 'Per U-Sack', NULL, '7.50', NULL, 'sk', 'Lb/yd', '1.25', 57),
+(103, '18DG', '1/4\" Desert Gold (nets 1/8\") ', '1/8\"', '1-8DesertGold.jpg', '111.95', NULL, 'ton', 'Ton/Yard', '1.25', 57),
+(104, '18DG', '3/8\" Desert Gold', '3/8\"', '3-8DesertGold.jpg', '111.95', NULL, 'ton', 'Ton/Yard', '1.25', 57),
+(105, '18DG', '3/4\" Desert Gold', '3/4\"', '3-4DesertGold.jpg', '111.95', NULL, 'ton', 'Ton/Yard', '1.25', 57);
 
 -- --------------------------------------------------------
 
@@ -264,7 +300,26 @@ INSERT INTO `product` (`id`, `sku`, `title`, `description`, `image`, `status`) V
 (36, 'OC', 'Organic Green Waste Garden Compost', '<p>Garden Compost is composted green waste and is OMRI and CDFA listed as organic. It is a rich amendment that is especially good for improving soils that are too sandy and drain too fast as well as to amend clay soil. Garden Compost is still warm, so spread it out on the surface or mix into your existing soil.  Spread the Garden Compost to a depth of 2 inches and mix in with your soil. </p><p>Although the Garden Compost is listed as CDFA OIM, it is still a recycled product so it may occasionally contain small inert debris such as plastic or glass. Therefore, we don\'t recommend it for organic food production. If you are looking for compost to grow organic vegetable, please consider using our Organic Diestel Structured Compost. </p><p>We sell the Garden Compost in one cubic foot bags, we supply the bags, you fill them. For larger areas, you will want to purchase the Garden Compost by the cubic yard. We can load your truck or for a fee, have us deliver to your home or jobsite. For orders over 40 cubic yards, please call us for direct pricing.</p><p>Garden Compost is OMRI and CDFA listed for organic use.\r\n</p><p>Organic Green Waste Garden Compost complies with SB 1383 requirements and is produced in a fully permitted composting facility conforming to the State of California regulations set forth by the California Integrated Waste Management Board (CIWMB) Title 14, Division 7 California Code of Regulations governing composting operations.</p>', 'organicGreenWasteGardenCompost.jpg', 'Active'),
 (37, 'WEBB', 'Webb Ranch Premium Organic Compost ', '<p>Webb Ranch Premium Organic Compost is screened and aged over 6 months. Compost is weed-free, smells earthy, and is an invaluable addition to any garden because it improves soil structure. The primary soil food is organic matter and compost is the best way to provide it— making Webb Ranch Compost a key component of successful gardens.  \r\nWebb Ranch Premium Organic Compost is made from fine wood shavings, horse manure, hay, and green waste from Webb Ranch’s organic farm.  It is ideal for use in vegetable gardens, flower beds, around trees and shrubs, and on lawns.  Add it to the soil at the time of planting, side-dress your existing plants, or use it as a surface mulch and watch your garden thrive!\r\n</p><p>Although the Garden Compost is listed as CDFA OIM, it is still a recycled product so it may occasionally contain small inert debris such as plastic or glass. Therefore, we don\'t recommend it for organic food production. If you are looking for compost to grow organic vegetable, please consider using our Organic Diestel Structured Compost. </p><p>How to Use: </p><p>Amending Soil: Work 1-2 inches of compost into the top 3-5 inches of soil.</p><p>Growing Fruit and Vegetables- Spread 1-2 inches of compost on top of the garden bed in the Fall.  Till it into the soil in the Springtime.  Add ½ inch of compost monthly as plants begin to grow quickly.</p><p>Lawn: For new lawns, add up to 3 inches of compost into the soil and till to a depth of 5-7 inches.  For existing lawns, incorporate 1 inch of compost into the bald spots before reseeding.  You can also topdress lawns with ¼ inch of finely screened compost.  Rake the compost evenly throughout the grass area.  Over time the compost will improve the soil, reducing the need for other products.</p><p>New and Existing Plants: When planting, work 1 inch of compost into the top 2 inches of soil in and around the planting hole.  Apply 1-2 inches of compost as a mulch around new and existing plants in early Spring or Fall to improve the soil, prevent weeds, and help retain moisture.  You can also gently till compost into the soil once or twice a year.  Do not place compost directly against the stem or trunk of a plant, which could cause rot or invite pests.</p><p>Compost Coverage: 2 cubic feet of compost will cover approximately 24 square feet at a depth of 1 inch.</p><p>We sell the Webb Ranch Premium Organic Compost in one cubic foot bag, we supply the bags, you fill them. For larger areas, you will want to purchase by the cubic yard. We can load your truck or for a fee, have us deliver to your home or jobsite. For orders over 40 cubic yards, please call us for direct pricing.</p><p>Webb Ranch Premium Organic Compost is CDFA OIM listed for organic use. </p>', 'webRanchPremiumCompost.png', 'Active'),
 (38, 'BIOSWALE', 'Biotreatment Soil Mix', '<p>Biotreatment Soil Mix is very effective at filtering stormwater runoff before it enters our storm drains and waterways. The process of running the storm or runoff water through the Biotreatment Soil Mix allows the water to be cleaned up by the biology and filtered so pollutants and sediments are much reduced. The Biotreatment Soil Mix will support many vernal and riparian plant communities, the roots of the plants will also help clean up the stormwater runoff. The quality of water going into our streams, creeks, bay and ocean will be much improved creating a much healthier habitat for our native amphibians and fish.</p><p>Our Biotreatment Mix meets the “Soil Specifications: criteria approved by the Executive Officer of the San Francisco Bay Regional Water Quality Control Board on April 18, 2016, in accordance with Provision C.3.c.i.(2)(c)(ii) of the Municipal Regional Stormwater Permit (MRP). Meets BASMAA and SFPUC specifications. </p>', 'biotreatmentSoilMix.jpg', 'Active'),
-(39, 'BBBPS', 'Baby Bu\'s Biodynamic Potting Mix', '<p>Baby Bu bursts with premium materials specially blended with Bu\'s Blend(TM) Biodynamic(R) Compost to Support plant & soil life in your raised beds, pots, container gardens, hanging baskets, and houseplants.</p><p>Baby Bu\'s(TM) Biodynamic(R) Blend Potting Soil:</p><ul><li>Contains no GMOs, pesticides, sewage sludge, growth hormones, or synthetic chemicals</li><li>Acts as an alternative to chemical, synthetic, and \"faux\" soil amendments</li><li>Aids in the proliferation of beneficial soil microbes</li><li> Is ideal for seeds, seedlings, & transplants</li><li>aves water through proper moisture absorption at the surface and dissipation at the root levels</li><li>Is safe and non-toxic for your kids, your pets, and our planet.</li></ul><br/><p>Ingredients:</p><p>Coir, compost (composted organic dairy cow manure, wood chips, straw, concentrations of yarrow, chamomile, valerian, stinging nettle, dandelion, & oak bark), fir bark, perlite, worm castings, soybean meal, fish meal, fish bone meal, langbeinite, alfalfa meal, crab meal, green sand, neem seed meal, volcanic ash, biochar & kelp meal. </p><p>Baby Bu\'s Biodynamic Potting Mix is available pre-bagged in 1.5 cubic foot.</p>', 'babyBuBiodynamicPottingSoil.jpg', 'Active');
+(39, 'BBBPS', 'Baby Bu\'s Biodynamic Potting Mix', '<p>Baby Bu bursts with premium materials specially blended with Bu\'s Blend(TM) Biodynamic(R) Compost to Support plant & soil life in your raised beds, pots, container gardens, hanging baskets, and houseplants.</p><p>Baby Bu\'s(TM) Biodynamic(R) Blend Potting Soil:</p><ul><li>Contains no GMOs, pesticides, sewage sludge, growth hormones, or synthetic chemicals</li><li>Acts as an alternative to chemical, synthetic, and \"faux\" soil amendments</li><li>Aids in the proliferation of beneficial soil microbes</li><li> Is ideal for seeds, seedlings, & transplants</li><li>Saves water through proper moisture absorption at the surface and dissipation at the root levels</li><li>Is safe and non-toxic for your kids, your pets, and our planet.</li></ul><br/><p>Ingredients:</p><p>Coir, compost (composted organic dairy cow manure, wood chips, straw, concentrations of yarrow, chamomile, valerian, stinging nettle, dandelion, & oak bark), fir bark, perlite, worm castings, soybean meal, fish meal, fish bone meal, langbeinite, alfalfa meal, crab meal, green sand, neem seed meal, volcanic ash, biochar & kelp meal. </p><p>Baby Bu\'s Biodynamic Potting Mix is available pre-bagged in 1.5 cubic foot.</p>', 'babyBuBiodynamicPottingSoil.jpg', 'Active'),
+(40, 'DEANPP', 'Down To Earth All Natural Potting Soil', '<p>Our blend of premium organic ingredients makes Down To Earth™ All Natural Potting Soil an excellent all purpose mix for seed starting, transplanting or container gardening. It’s ideal for vegetables, flowers, houseplants and trees in indoor and outdoor containers, hanging baskets or planter boxes. It is also recommended for amending garden soils or for preparing raised beds. This Aged Pacific Northwest Bark, Coconut Coir Fiber and Vermicompost based soil is ideal for the developing root systems of all plants. Enhanced with pure Earthworm Castings, Mycorrhizal Fungi and Organic Fertilizer, DTE™ All Natural Potting Soil will nourish your plants naturally.</p><p>GUARANTEED ANALYSIS:</p><ul><li>Total Nitrogen (N) 0.1%\r\n0.1% Water Insoluble Nitrogen</li><li>Available Phosphate (P2O5) 0.1%</li><li>Soluble Potash (K2O) 0.1%</li><li>SOIL AMENDING INGREDIENTS: Bark, Coir Fiber, Perlite, Diatomite, Vermicompost, Oyster Shell, and Dolomitic Limestone (for pH adjustment)</li><li>DERIVED FROM: Earthworm Castings, Fish Bone Meal, Blood Meal, Langbeinite, Greensand, Volcanic Ash and Kelp Meal.</li></ul><br/><p>ALSO CONTAINS NON-PLANT FOOD INGREDIENT(S):\r\nMycorrhizal Inoculant (Glomus intraradices 0.016 prop/gm, Glomus mosseae 0.017 prop/gm, Glomus aggregatum 0.018 prop/gm, Glomus etunicatum 0.02 prop/gm, Pisolithus tinctorius 280 prop/gm, Rhizopogon villosullus 8 prop/gm, Rhizopogon luteolus 8 prop/gm, Rhizopogon amylopogon 8 prop/gm, Rhizopogon fulvigleba 8 prop/gm, Scleroderma citrinum 17 prop/gm, Scleroderma cepa 17 prop/gm)</p><p>APPLICATION RATES:</p><ul><li>This potting soil is ready to use right from the bag. Select the appropriate size container for your plant and add 2-3 inches of fresh potting soil.</li><li>Gently remove the plant from its current pot and carefully untangle any existing roots.</li><li>Place the plant in the new container and add soil to completely cover the root system up to the base of the stem.</li><li>Lightly tamp down the soil to remove any air pockets and secure the plant. Water thoroughly and allow the excess water to drain out the bottom of the pot.</li><li> Most plants will benefit from a regular feeding schedule and consistent watering practices. Take pleasure in your plants and be sure to water when the soil feels dry to the touch.</li></ul><br /><p>Down To Earth All Natural Potting Soil will supply enough organic nutrients to feed the average plant for 3 to 4 weeks. To ensure consistent performance, please remember to tightly close the bag after each use.</p>', 'downToEarchAllNaturalPottingSoil.jpg', 'Active'),
+(41, 'ES', 'Essential Soil Blend', '<p>Essential Soil Blend is a substitute soil mix for our regular Essential Soil.</p><p>Essential Soil Blend is an all-natural mix that is engineered to resist compaction, has excellent water penetration, good aeration, and will support rapid root growth. Essential Soil Blend is recommended for raised planter beds and will support excellent root growth. An ideal soil for vegetables and fruit trees.</p><p>Essential Soil Blend is comprised of the following: ¼”-Pea Gravel which is an inorganic mineral component for drainage and aeration; Organic Garden Compost provides organic matter and soluble nutrients; ¼-Fir Bark is a wood amendment acts as carbon matter; Coarse Sand is an inorganic mineral component; Bio-Nutrient Package provides soil microbiology.</p><p>Due to the biological nature of the Essential Soil, proper irrigation and mulch cover is required. Do not let the soil sit fallow. Cover cropping during Winter is highly recommended.\r\n</p><p>We sell the Essential Soil Blend in one cubic foot bag, we supply the bags and you fill them. For large areas, you\'ll want to purchase the Mix by the cubic yard. We can load your truck or for a fee, have us deliver to your home or job site.</p>', 'essentialSoil.png', 'Active'),
+(42, 'LM', 'Landscape Mix', '<p>Our Landscape Mix (formerly \"Nursery Mix\") is an all-purpose soil mix for outdoor use. It contains Sandy Loam, Redwood Sawdust, Organic Garden Compost, and Organic Crustacean Meal. You can spread it out over an existing soil and turn it under wherever you need to raise the grade and improve your soil. Our Landscape Mix can also be used for under new sod installation with an application of Bio-Turf or Bio-Live organic fertilizers.</p><p>If you are growing vegetables we recommend using either the Essential Soil or our Lyngso Vegetable Blend. For vegetables, the Landscape Mix will need either an application of organic fertilizer like Bio-Fish or All Purpose or a 2\" application of Diestel Structured Compost worked into the top 6\"-8\" of the raised bed.</p><p>We sell the Landscape Mix in one cubic foot bags, we supply the bags, you fill them. For larger areas, you\'ll want to purchase the Nursery Mix by the cubic yard. We can load your truck or for a fee, have us deliver to your home or job-site.\r\n</p>', 'landScapeMix.png', 'Active'),
+(43, 'OAM', 'Organic Amendment Mix', '<p>Organic Amendment Mix is a blend of Organic Green Waste Garden Compost, Redwood Sawdust, and Organic Feather Meal. This mix is generally used for improving most soils in water retention and aeration. Amendment Mix helps to open up clay for rainwater to be held and to be moved through the soil. Excellent for new sod installations and for generic all-purpose soil amending.</p><p>For additional organic fertilizer and microbiology, mix in Bio-Live 5-4-2 while amending.</p><p>Lyngso\'s Organic Amendment Mix is an organic substitute for Nitrolized Redwood Amendment.</p><p>CDFA OIM LISTED FOR ORGANIC USE</p><p>We sell the Organic Amendment Mix in one cubic foot bag, we supply the bags and you fill them. For large areas, you\'ll want to purchase by the cubic yard. We can load your truck or for a fee, have us deliver to your home or job site. For orders over 20 cubic yards, please call us for direct pricing.</p>', 'organicAmendmentMix.png', 'Active');
+INSERT INTO `product` (`id`, `sku`, `title`, `description`, `image`, `status`) VALUES
+(44, '38PG', '3/8&quot; Pea Gravel ', '<p>3/8\" Pea Gravel is a clean stone mix often used in small line Portland cement and concrete mixes.  The gravel can also be used as a backfill for drainage runs and underground storage tanks. 3/8\" pea gravel also makes for a care-free ground cover, patio mix, sturdy driveway material, dog run, and quality roofing material.</p>\r\n<p>We sell the 3/8\" Pea Gravel in one cubic foot bags, we supply the bags and you fill them. For larger areas, you\'ll want to purchase by the ton. Bring your truck and we can load it, or have us deliver the stones to you in the Bay Area. For orders over 20 tons please call us for direct pricing.</p>\r\n<p>3/8\" Pea Gravel may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly. </p>', '3-8-pea-gravel.jpg', 'Active'),
+(45, '34CDR', '3/4&quot; Crushed Drain Rock', '<p>Used for back-filling perforated drainpipes and french drains, allowing water flow in your intended direction. The 3/4\" Crushed Drain Rock is also a sturdy material for potholes and driveways. The crushed rock locks together making a more stable surface and provide a strong foundation.\r\n</p>\r\n<p>Please note: accurate product pictures can be found by clicking on \'VIEW MORE\' under the currently displayed picture. </p>\r\n<p>We sell the 3/4\" Crushed Drain Rock in one cubic foot bag, we supply the bags and you fill them in our San Carlos location. For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee, have us deliver to your jobsite in the Bay Area. For orders over 20 tons please call us for direct pricing.</p><p>3/4\" Crushed Drain Rock may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly. </p>', '3-4crushedDrainRock.jpg', 'Active'),
+(46, 'BBF', 'Black Basalt Fines', '<p>Black Basalt Fines are 1/4\" minus basalt quarry fines that are charcoal gray in color. Typically used for pathways and parking areas, dog runs, and utility yards. These quarry fines will not compact to a firm surface and is permeable. \r\n</p>\r\n<p>Standard application is to spread about 2\", water and roll it, then apply the last 1\"-2\" for extra stability. </p>\r\n<p>We sell the Black Basalt Fines in one cubic foot bag; we supply the bags and you fill them. For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee, have us deliver to your home or jobsite. For orders over 20 tons, please call us for direct pricing.</p><p>Black Basalt Fines may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly. </p>', 'blackBasaltFines.jpg', 'Active'),
+(47, 'BBFS', 'Black Basalt Fines Stabilized ', '<p>Black Basalt Fines are 1/4\" minus basalt quarry fines that are charcoal gray in color. Typically used for pathways and parking areas, dog runs, and utility yards. These quarry fines will not compact to a firm surface and is permeable. \r\n</p>\r\n<p>Standard application is to spread about 2\", water and roll it, then apply the last 1\"-2\" for extra stability. </p>\r\n<p>We sell the Black Basalt Fines in one cubic foot bag; we supply the bags and you fill them. For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee, have us deliver to your home or jobsite. For orders over 20 tons, please call us for direct pricing.</p><p>Black Basalt Fines may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly. </p>', 'blackBasaltFinesStabilized.jpg', 'Active'),
+(48, 'BF', 'Blue Fines', '<p>Blue Fines is a 1/4\" minus quarry fines is typically used for pathways and parking areas, dog runs, utility yards and allows water to permeate. Blue Fines should be spread 3\"-4\" deep and compacted. You will have a natural-looking pathway for years to come.\r\n</p>\r\n<p>We sell the Blue Fines in one cubic foot bag; we supply the bags and you fill them. For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee, have us deliver to your home or jobsite. For orders over 20 tons, please call us for direct pricing.</p>\r\n<p>Blue Fines may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly.</p>', 'blueFines.jpg', 'Active'),
+(49, 'BFS', 'Blue Fines Stabilized', '<p>Blue Fines Stabilized stone is not a substitute for a non-permeable concrete or asphalt surface. This product was developed to mitigate erosion during heavy rains and is perfect for pathways and between flagstone and pavers. The surface will always have some loose grit that can be tracked. \r\n</p>\r\n<p>It is critical to follow the proper installation instructions to ensure the performance of the product. Lyngso will not be responsible for unsatisfactory results due to improper installation. See the attached installation guidelines. </p>\r\n<p>Blue Fines may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly.</p>\r\n<p>Blue Fines are a 1/4\" minus rock that is perfect for pathways and between flagstone and pavers.  Stabilized Blue Fines are available in stock and are pre-mixed with a stabilizer. For areas where the stability of the pathway fines is desired, a stabilizer can be added. We only use a non-toxic, natural stabilizer. </p><p>Blue Fines should be spread and compacted at 2\"- 4\". There may be a 15-20% shrinkage during compaction so plan ahead with your calculations. Stabilized Blue Fines will need to be set with spraying water once compacted. Curing time is necessary before using the space and varies depending on the weather.\r\n</p><p>We sell the Blue Fines in one cubic foot bag; we supply the bags and you fill them. For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee, have us deliver to your home or jobsite. For orders over 20 tons, please call us for direct pricing.</p><p>Blue Fines may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly.</p>', 'blueFinesStabilized.jpg', 'Active'),
+(50, 'DBF', 'Desert Brown Fines', '<p>Desert Brown Fines are brown decomposed 3/8\" minus quarry fines. Commonly used for decorative pathways, parking areas, utility yards and dog runs. Desert Brown Fines packs well due to the larger quarry gravel and will have visible grits on the surface layer. Permeable material. Desert Brown Fines should be spread 3\"-4\" deep and compacted. \r\n</p>\r\n<p>We sell the Desert Brown Fines in one cubic foot bag; we supply the bags and you fill them. For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee, have us deliver to your home or jobsite. For orders over 20 tons, please call us for direct pricing.</p>\r\n', 'desertBrownFines.jpg', 'Active'),
+(51, 'SGPF', 'Sunset Gold Path Fines', '<p>Sunset Gold Path Fines are 1/4\" minus gold granite fines and is typically referred to as decomposed granite. Sunset Gold Path Fines are gold and tan in color and are used for pathways, driveways, parking areas, and between flagstone and pavers. Sunset Gold Path Fines is permeable and once compacted, top layer will still have some loose fines.  Apply 2\" deep, water and roll, then add a 1\" - 2\" layer to complete the project. \r\n</p>\r\n<p>We sell the Sunset Gold Path Fines in one cubic foot bag, we supply the bags and you fill them. For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee, have us deliver to you. For orders over 20 tons please call us for direct pricing.</p><p>Sunset Gold Path Fines may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly.</p>\r\n', 'sunsetGoldPathFines.jpg', 'Active'),
+(52, 'SGPFS', 'Sunset Gold Path Fines Stabilized', '<p>Sunset Gold Path Fines Stabilized stones is not a substitute for a non-permeable concrete or asphalt surface. This product was developed to mitigate erosion during heavy rains. The surface will always have some loose grit that can be tracked.</p>\r\n<p>Gold Path Fines stones are pre-mixed with stabilizer and available in stock.  Non-toxic stabilizer material is added to the mix in applications where high stability is needed.</p><p>It is critical to follow the proper installation instructions to ensure the performance of the product. Lyngso will not be responsible for unsatisfactory results due to improper installation. See the attached installation guidelines. </p><p>Sunset Gold Path Fines are 1/4\" minus gold granite fines. The Sunset Gold Path Fines are gold and tan in color and are used for pathways and between flagstone and pavers. Stabilized Sunset Gold Path Fines are available in stock and are pre-mixed with a stabilizer. For areas where the stability of the pathway fines is desired, a stabilizer can be added. We only use a non-toxic, natural stabilizer. </p><p>Sunset Gold Path Fines should be spread and compacted at 2\"- 4\". There may be a 15-20% shrinkage during compaction so plan ahead with your calculations. Stabilized Sunset Gold Path Fines will need to be set with spraying water once compacted. Curing time is necessary before using the space and varies depending on the weather. </p><p>We sell the Sunset Gold Path Fines in one cubic foot bag; we supply the bags and you fill them. For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee, you can use our rental truck or have us deliver to you. For orders over 20 tons, please call us for direct pricing.\r\n</p><p>Sunset Gold Path Fines may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly.</p>\r\n', 'sunsetGoldPathFines.jpg', 'Active'),
+(53, 'ASTC', '1.5\"-7\" Autumn Slate Tumbled Chip ', '<ul>\r\n<li>Origin: Asia</li><li>Classification: Slate</li><li>Color Range: Charcoals, Tans, Bronze Rusts</li><li>Finishes: Crushed Tumbled Natural Matte</li>\r\n</ul>\r\n\r\n\r\n<p>The Autumn Slate Chips look great in contemporary gardens, walkway lining and accent areas. Slate material with tans and bronze colored rusts. Use as an unusual ground cover. Tumbled for smooth edges. 1.5\"-7\" in size. </p>\r\n<p>We sell the Autumn Slate Tumbled Chips in one cubic foot bags, we supply the bags and you fill them. For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee you can use our rental truck or have us deliver to you. For orders over 20 tons please call us for direct pricing.</p>\r\n', '15-7AutumnSlateTumbledChip.jpg', 'Active'),
+(54, 'MBTSC', '1.5\"-7\" Midnight Black Slate Tumbled Chip', '<ul>\r\n<li>Origin: Asia</li><li>Classification: Slate</li><li>Color Range: Charcoals, Tans</li><li>Finishes: Crushed Tumbled Natural Matte</li>\r\n</ul>\r\n\r\n\r\n<p>The black Slate Tumbled Chips look great in contemporary gardens, edge areas near walkways and drives, or use it as an unusual ground cover. Tumbled for smooth edges.\r\n</p>\r\n<p>We sell the Midnight Black Slate Tumbled Chips in one cubic foot bags, we supply the bags and you fill them. For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee you can use our rental truck or have us deliver to you. For orders over 20 tons please call us for direct pricing.</p>\r\n', '15-7MidnightBlackSlateTumbledChip.jpg', 'Active'),
+(55, '1278GGR', '1/2\"-7/8\" Glacier Green', '<p>Our 1/2\" - 7/8\" Glacier Green Gravel is crushed and cleaned, great for gardens, walkways and decorative accents in gardens.\r\n</p>\r\n<p>The Glacier Green Gravel can be purchased by the bag or delivery may be possible to your SF Bay area home.  Visit our large showroom and landscaping yard in San Carlos. </p>\r\n', '12-78GlacerGreen.jpg', 'Active'),
+(56, '38CBB', '1/4\" & 3/8\" Crushed Black Basalt', '<p>3/8\" Crushed Black Basalt rock is attractive decorative gravel with charcoal hues. It\'s angular in shape, it packs well for walkways, pathways, patios and driveways.\r\n</p>\r\n<p>We sell the 3/8\" Crushed Black Basalt in one cubic foot bag, we supply the bags and you fill them. For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee, have us deliver to you. For orders over 20 tons please call us for direct pricing.</p><p>3/8\" Crushed Black Basalt may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly.</p>\r\n', 'crushedBlackBasalt.jpg', 'Active'),
+(57, '18DG', '1/8\", 3/8\" & 3/4\" Desert Gold ', '<ul><li>Origin: North America</li><li>Classification: Gold Granite</li><li>Finishes: Crushed Angular Rocks</li><li>Application: Great for walkways/pathways</li></ul>\r\n<br/ >\r\n<p>Our Desert Gold stone material is a vibrant tan and white speckled crushed granite. Seamlessly integrates into succulent gardens, xeriscaping and various design aspect of a striking landscape. Common uses include pathways, driveways, and decorative accents. Also, used as a garden groundcover, and in planting beds as rock mulch. Desert Gold will contain fines. \r\n</p><p>Desert Gold is available in three nominal sizes: 1/8\", 3/8\" and  3/4\".</p>\r\n<p>Desert Gold may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly.</p>\r\n', '1-8DesertGold.jpg', 'Active');
 
 -- --------------------------------------------------------
 
@@ -309,7 +364,7 @@ INSERT INTO `product_category` (`id`, `sku`, `product_order`, `category`, `produ
 (22, 'PF', 8, 31, 22),
 (23, 'PAM', 9, 31, 23),
 (24, 'SCB', 10, 31, 24),
-(25, 'SFB', 10, 31, 25),
+(25, 'SFB', 11, 31, 25),
 (26, 'WOB', 10, 31, 26),
 (27, 'TWC', 11, 31, 27),
 (28, 'AACT', 10, 29, 28),
@@ -323,7 +378,25 @@ INSERT INTO `product_category` (`id`, `sku`, `product_order`, `category`, `produ
 (36, 'OC', 17, 29, 36),
 (37, 'WEBB', 18, 29, 37),
 (38, 'BIOSWALE', 19, 32, 38),
-(39, 'BBBPS', 19, 32, 39);
+(39, 'BBBPS', 19, 32, 39),
+(40, 'BBBPS', 20, 32, 40),
+(41, 'ES', 21, 32, 41),
+(42, 'LM', 22, 32, 42),
+(43, 'OAM', 23, 32, 43),
+(44, '38-FB', 30, 20, 44),
+(45, '34CDR', 31, 20, 45),
+(46, 'BBF', 1, 22, 46),
+(47, 'BBFS', 1, 22, 47),
+(48, 'BF', 2, 22, 48),
+(49, 'BFS', 3, 22, 49),
+(50, 'DBF', 4, 22, 50),
+(51, 'SGPF', 5, 22, 51),
+(52, 'SGPFS', 6, 22, 52),
+(53, 'SGPFS', 6, 23, 53),
+(54, 'MBTSC', 7, 23, 54),
+(55, '1278GGR', 8, 23, 55),
+(56, '38CBB', 3, 23, 56),
+(57, '18DG', 3, 23, 57);
 
 -- --------------------------------------------------------
 
@@ -366,6 +439,7 @@ CREATE TABLE `users` (
   `postal_code` varchar(20) NOT NULL,
   `company` varchar(20) NOT NULL,
   `isAdmin` tinyint(1) NOT NULL DEFAULT '0',
+  `refreshToken` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `createdAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
@@ -374,9 +448,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `first_name`, `last_name`, `email`, `password`, `phone`, `address`, `city`, `country`, `state_province`, `postal_code`, `company`, `isAdmin`, `createdAt`, `updatedAt`) VALUES
-('9b092928-22a5-4dc7-b572-7115bdb2841e', 'cameronM', 'Cameron', 'McClintock', 'test@tess.com', '$2a$12$DSgKVuCjg39SrkKzh8VNuO.K861o8S6XIKnsLzh5EIJjyR2GIo4zO', '6507033736', '201 Burns Valley Road', 'Loma Mar', 'US', 'CA', '94021', '', 0, '2022-05-03 09:26:38', NULL),
-('b6a19327-e5d5-4b06-aba6-3607d81671a6', 'jmcclint', 'Joseph', 'McClintock', 'joseph@nativemeadow.com', '$2a$12$QeqKI6Irxp4Ju7jEMCwx3OFEoB.zRL8hdB/KXulVdbtngYRfyxQKq', '6507033736', '201 Burns Valley Road', 'Loma Mar', 'US', 'CA', '94021', '', 0, '2022-04-30 18:52:56', NULL);
+INSERT INTO `users` (`id`, `username`, `first_name`, `last_name`, `email`, `password`, `phone`, `address`, `city`, `country`, `state_province`, `postal_code`, `company`, `isAdmin`, `refreshToken`, `createdAt`, `updatedAt`) VALUES
+('22cc71a5-01e0-47e3-91c3-ab03e6b48a3f', 'josephM', 'Joseph', 'McClintock', 'test@test.com', '$2a$12$IFMl4eHzSBov1BVRbhC40esCP6E.OQxL3su..Urvc3IvoX79BzDXK', '6507033736', '201 Burns Valley Road', 'Loma Mar', 'US', 'CA', '94021', '', 0, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyMmNjNzFhNS0wMWUwLTQ3ZTMtOTFjMy1hYjAzZTZiNDhhM2YiLCJpYXQiOjE2NTMwODc3NjIsImV4cCI6MTY1MzE3NDE2Mn0.f1xbh88vqNeheLDJnFgQVbdpjjPirXAm9q2yxKm0PgY', '2022-05-20 16:02:19', '2022-05-20 16:02:42'),
+('a60777af-987e-4529-86d6-70e4371a43a1', 'cameronM', 'Cameron', 'McClintock', 'test2@test.com', '$2a$12$hjQsGV09UBouNEPhH7roTu7fbCWBozOFHstdQa3mK/rSrV4Vn4Wke', '6507033736', '201 Burns Valley Road', 'Loma Mar', 'US', 'CA', '94021', '', 0, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhNjA3NzdhZi05ODdlLTQ1MjktODZkNi03MGU0MzcxYTQzYTEiLCJpYXQiOjE2NTM0MTMyNjEsImV4cCI6MTY1MzQ5OTY2MX0.FyWR2bC2qsBH3ePK00V8Xeb-NMNsjDmQkGczbzh3x_Y', '2022-05-24 10:26:04', '2022-05-24 10:27:41'),
+('b6a19327-e5d5-4b06-aba6-3607d81671a6', 'jmcclint', 'Joseph', 'McClintock', 'joseph@nativemeadow.com', '$2a$12$QeqKI6Irxp4Ju7jEMCwx3OFEoB.zRL8hdB/KXulVdbtngYRfyxQKq', '6507033736', '201 Burns Valley Road', 'Loma Mar', 'US', 'CA', '94021', '', 0, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiNmExOTMyNy1lNWQ1LTRiMDYtYWJhNi0zNjA3ZDgxNjcxYTYiLCJpYXQiOjE2NTM0MTM3NzEsImV4cCI6MTY1MzUwMDE3MX0.x32vHqwoBnfD23cVz7YKIWmIcNkZ2Chu0BHWU5f1tWo', '2022-04-30 18:52:56', '2022-05-24 10:36:11');
 
 --
 -- Indexes for dumped tables
@@ -438,19 +513,19 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `price`
 --
 ALTER TABLE `price`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `product_category`
 --
 ALTER TABLE `product_category`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `units_of_measure`
