@@ -106,7 +106,7 @@ export const getProductsPerCategory = async (req, res, next) => {
     const { id } = req.params;
     const db = DbService.getDbServiceInstance();
     const query = `SELECT product.id, product.sku, product.title, product.description, product.image,
-            price.id as priceKey, price.title as priceTitle, price.description as priceDescr, price.price, price.size, price.units, price.coverage, price.coverage_value 
+            price.id as priceKey, price.title as priceTitle, price.description as priceDescr, price.image as priceImage, price.price, price.size, price.units, price.coverage, price.coverage_value 
         FROM product 
         JOIN price ON price.product = product.id and product.status = 'Active'  
         JOIN product_category ON product_category.product = product.id
@@ -136,6 +136,7 @@ export const getProductsPerCategory = async (req, res, next) => {
                     key: prod.priceKey,
                     title: prod.priceTitle,
                     description: prod.priceDescr,
+                    image: prod.priceImage,
                     price: prod.price,
                     size: prod.size,
                     units: prod.units,
