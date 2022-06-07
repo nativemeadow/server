@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 26, 2022 at 09:18 PM
+-- Generation Time: Jun 07, 2022 at 11:20 PM
 -- Server version: 8.0.27
 -- PHP Version: 8.1.2
 
@@ -50,7 +50,7 @@ INSERT INTO `category` (`id`, `url_key`, `title`, `description`, `image`, `categ
 (6, 'water-features', 'Water Features', NULL, 'water-features.jpg', 6, NULL),
 (7, 'tools', 'Building Materials and Tools', NULL, 'tools.jpg', 7, NULL),
 (8, 'precast', 'Precast Concrete Products', 'Please refer to our vendor websites for your paver selections, you\'ll be redirected by clicking on the picture below. \r\n\r\nFor more information and to place your order, call us at (650) 364 1730.', 'precast-concrete.jpg', 8, NULL),
-(11, NULL, 'Boulders', 'Boulders are a timeless natural resource that enhances the beauty of any landscaped area. Use them as a focal point in your garden or as a complimentary element. Boulders could also be enjoyed as a natural seating in an outdoor space. Our boulders are sold by weight of the individual piece. We carry a wide variety of natural boulders from granite to quartzite to basalt and more! With natural variations between each boulder, no two are alike. \r\n\r\nVisit our yard to handpick your unique boulders!\r\n\r\nDisclaimer: Many stone types may have concentrations of iron, and with the exposure to moisture, rust stains may be bleeding to the surface of the stone. For many stone types there is no way of knowing prior to installation if this will be an issue.', 'boulders.jpg', 10, 2),
+(11, NULL, 'Boulders', '<p>Boulders are a timeless natural resource that enhances the beauty of any landscaped area. Use them as a focal point in your garden or as a complimentary element. Boulders could also be enjoyed as a natural seating in an outdoor space. Our boulders are sold by weight of the individual piece. We carry a wide variety of natural boulders from granite to quartzite to basalt and more! With natural variations between each boulder, no two are alike. </p>\r\n\r\n<p>Visit our yard to handpick your unique boulders!</p>\r\n\r\n<p>Disclaimer: Many stone types may have concentrations of iron, and with the exposure to moisture, rust stains may be bleeding to the surface of the stone. For many stone types there is no way of knowing prior to installation if this will be an issue.</p>', 'boulders.jpg', 10, 2),
 (13, NULL, 'Dimensional Stones', 'Dimensional Stones are cut stones with rectilinear edges, making installation of natural stone quite easy. Create your own desired pattern with various sizes. Most dimensional stones are offered from 12\" X 12\" size. Custom sizes are made to order.', 'dimensional-stone.jpg', 11, 2),
 (14, NULL, 'Driveway Cubes, Cobbles & Pavers', NULL, 'driveway-cubes-cobbles-pavers.jpg', 12, 2),
 (15, NULL, 'Drystack and Wall Rocks\r\n', NULL, 'drystack-wall-rocks.jpg', 13, 2),
@@ -236,11 +236,60 @@ INSERT INTO `price` (`id`, `sku`, `title`, `description`, `image`, `price`, `siz
 (98, '1278GGR', 'Glacier Green Rock 1/2\"-7/8\"', 'Per Ton', NULL, '374.95', NULL, 'ton', 'Ton/Yard', '1.40', 55),
 (99, '38CBB', 'Crushed Black Basalt U-sack ', 'Per U-Sack', NULL, '7.95', NULL, 'sk', 'Ton/Yard', '1.25', 56),
 (100, '38CBB', '3/8\" Crushed Black Basalt Rock', '3/8\"', '3-8CrushedBlackBasalt.jpg', '111.50', NULL, 'ton', 'Ton/Yard', '1.25', 56),
-(101, '38CBB', '1/4\" Crushed Black Basalt Rock', '1/4\"', NULL, '111.50', NULL, 'ton', 'Ton/Yard', '1.25', 56),
+(101, '14CBB', '1/4\" Crushed Black Basalt Rock', '1/4\"', NULL, '111.50', NULL, 'ton', 'Ton/Yard', '1.25', 56),
 (102, '18DG', '1/8\" Desert Gold Sack ', 'Per U-Sack', NULL, '7.50', NULL, 'sk', 'Lb/yd', '1.25', 57),
-(103, '18DG', '1/4\" Desert Gold (nets 1/8\") ', '1/8\"', '1-8DesertGold.jpg', '111.95', NULL, 'ton', 'Ton/Yard', '1.25', 57),
-(104, '18DG', '3/8\" Desert Gold', '3/8\"', '3-8DesertGold.jpg', '111.95', NULL, 'ton', 'Ton/Yard', '1.25', 57),
-(105, '18DG', '3/4\" Desert Gold', '3/4\"', '3-4DesertGold.jpg', '111.95', NULL, 'ton', 'Ton/Yard', '1.25', 57);
+(103, '14DG', '1/4\" Desert Gold (nets 1/8\") ', '1/8\"', '1-8DesertGold.jpg', '111.95', NULL, 'ton', 'Ton/Yard', '1.25', 57),
+(104, '38DG', '3/8\" Desert Gold', '3/8\"', '3-8DesertGold.jpg', '111.95', NULL, 'ton', 'Ton/Yard', '1.25', 57),
+(105, '34DG', '3/4\" Desert Gold', '3/4\"', '3-4DesertGold.jpg', '111.95', NULL, 'ton', 'Ton/Yard', '1.25', 57),
+(106, '38T', '3/8\" Taffy Per U-sack', 'Per U-Sack', NULL, '9.95', NULL, 'sk', 'Lb/yd', '1.25', 58),
+(107, '38T', '3/8\" Taffy Rock (minus) ', '3/8\"', NULL, '155.95', NULL, 'ton', 'Ton/Yard', '1.25', 58),
+(108, '21CBB', '2 1/2\" Crushed Black Basalt Sack ', 'Per U-Sack', NULL, '8.95', NULL, 'sk', 'Lb/yd', '1.25', 59),
+(109, '21CBB', '2 1/2\" Crushed Black Basalt Rock ', '21/2\"', NULL, '132.95', NULL, 'ton', 'Ton/Yard', '1.25', 59),
+(110, '38CRG', '3/8 Crushed Rose Gold (minus)', '3/8', NULL, '249.95', NULL, 'ton', 'Ton/Yard', '1.25', 60),
+(111, '38Y', '3/8\" Yosemite Tan Per U-sack', 'Per U-Sack', NULL, '7.50', NULL, 'sk', 'Lb/yd', '1.25', 61),
+(112, '38Y', '3/8\" Crushed Yosemite Tan', '21/2\"', NULL, '106.50', NULL, 'ton', 'Ton/Yard', '1.25', 61),
+(113, '24LC', '2 X 4 Lin Creek Cobbles Sack', 'Per U-Sack', NULL, '11.95', NULL, 'sk', 'Lb/yd', '1.25', 62),
+(114, '24LCC', '2 X 4 Lin Creek Cobbles', '2\"/4\"', '2-4LinCreekCobble.jpg', '199.95', NULL, 'ton', 'Ton/Yard', '1.25', 62),
+(115, '38LCC', '3 X 8 Lin Creek Cobbles', '3\"/8\"', '3-8LinCreekCobble.jpg', '199.95', NULL, 'ton', 'Ton/Yard', '1.25', 62),
+(116, '12LC', 'U-sack 1 1/2\" Lin Creek Pebbles', 'Per U-Sack', NULL, '10.95', NULL, 'sk', 'Lb/yd', '1.25', 63),
+(117, '24LC', '2 X 4 Lin Creek Cobbles', '2\"/4\"', '1-12LinCreekPebbles.jpg', '179.95', NULL, 'ton', 'Ton/Yard', '1.25', 63),
+(118, '112LC', '1/2\" Lin Creek Pebbles', '1/2\"', '1-2LinCreekPebbles.jpg', '179.95', NULL, 'ton', 'Ton/Yard', '1.25', 63),
+(119, '38LODI', '3/8\" Lodi Per Sack', 'Per U-Sack', NULL, '7.95', NULL, 'sk', 'Lb/yd', '1.25', 64),
+(120, '38LODI', '3/8\" Lodi ', '3/8\"', NULL, '114.95', NULL, 'ton', 'Ton/Yard', '1.25', 64),
+(121, '38PAMI', '3/8\" Pami Pebbles Sack ', 'Per U-Sack', NULL, '17.95', NULL, 'sk', 'Lb/yd', '1.25', 65),
+(122, '38PAMI', '3/8\" Pami Pebbles', '3/8\"', '3-8PamiPebbles.jpg', '305.95', NULL, 'ton', 'Ton/Yard', '1.25', 65),
+(123, '34PAMI', '3/4\" Pami Pebbles', '3/4\"', '3-4PamiPebbles.jpg', '305.95', NULL, 'ton', 'Ton/Yard', '1.25', 65),
+(124, '12QP', '1/2\" Quartz Pebbles 3/8\"x1/2\"', 'Per U-Sack', NULL, '17.95', NULL, 'sk', 'Lb/yd', '1.25', 66),
+(125, '12QP', '1/2\" Quartz Pebbles 3/8\"x1/2\"', '1/2\"', '1-2QuartzPebbles.jpg', '131.50', NULL, 'ton', 'Ton/Yard', '1.25', 66),
+(126, '34QP', '3/4\" Quartz Pebbles 3/4\"x1/2\"', '3/4\"', '3-4QuartzPebbles.jpg', '131.50', NULL, 'ton', 'Lb/yd', '1.25', 66),
+(127, '12SB', 'U-sack 1/2\" Salmon Bay', 'Per U-Sack', NULL, '30.50', NULL, 'sk', 'Ton/yd', '1.25', 67),
+(128, '34QP', '1/4\" Salmon Bay Pebbles', '1/4\"', 'samonBayPebbles.jpg', '576.95', NULL, 'ton', 'Ton/yd', '1.25', 67),
+(129, '12SB', '1/2\" Salmon Bay Pebbles ', '1/2\"', '1-2samonBayPebbles.jpg', '576.95', NULL, 'ton', 'Ton/yd', '1.25', 67),
+(130, 'BYHPP', 'Buckthorn Yellow High Pol 2-3 Cm', '2 cm - 3 cm or 3/4\" - 1 1/4\"', '', '65.00', NULL, 'lbs', '', '0.00', 68),
+(132, '9-15FSHPP', 'Five Springs High Pol .8-1.5cm', '9 cm - 15 cm or 3/8\" - 5/8\"', '3-5-8FiveSpringsHighPolishPebbles.jpg', '65.00', NULL, 'lbs', '', '0.00', 69),
+(133, '2-3FSHPP', 'Five Springs High Pol 2-3 Cm', '2 cm - 3 cm or 3/4\" - 1 1/4\"', '3-11-4FiveSpringsHighPolishPebbles.jpg', '65.00', NULL, 'lbs', '', '0.00', 69),
+(134, 'HRHPP', 'Henna Red High Polish 2-3 Cm', '2 cm - 3 cm or 3/4\" - 1 1/4\"', '', '65.00', NULL, 'lbs', '', '0.00', 70),
+(135, 'JGPP', 'Pol Jade Green 2-3cm/3/4\"-1 1/4\"', '2 cm - 3 cm or 3/4\" - 1 1/4\"', '', '45.00', NULL, 'lbs', '', '0.00', 71),
+(136, '2-3KBHPP', 'Kuro Black High Polish 2-3 Cm', '2 cm - 3 cm or 3/4\" - 1 1/4\"', '3-4-1-1-4KuroBlackHighPolishPebbles.jpg', '65.00', NULL, 'lbs', '', '0.00', 72),
+(137, '3-5KBHPP', 'Kuro Black High Polish 3-5Cm', '3 cm - 5 cm or 1\" - 2\"', '1-2KuroBlackHighPolishPebbles.jpeg', '65.00', NULL, 'lbs', '', '0.00', 72),
+(138, '5-8KBHPP', 'Kuro Black High Polish 3-5Cm', '5 cm - 8 cm or 2\" - 3\"', '2-3KuroBlackHighPolishPebbles.jpeg', '65.00', NULL, 'lbs', '', '0.00', 72),
+(139, '2-3NPP', 'Niji Pebbles 2-3cm/3/4\"-1 1/4\"', '2 cm - 3 cm or 3/4\" - 1 1/4\"', '3-4-1-1-4NijiPebbles.jpg', '35.00', NULL, 'lbs', '', '0.00', 73),
+(140, '1-15NPP', 'Niji Pebbles 1-1.5cm/3/8\"-5/8\"', '1 cm - 1.5 cm or 3/8\" - 5/8\"', '2-5-2-8NijiPebbles.jpg', '35.00', NULL, 'lbs', '', '0.00', 73),
+(141, 'TFWHPP', 'Tufa White High Polish 2-3 Cm', '2 cm - 3 cm or 3/4\" - 1 1/4\"', NULL, '65.00', NULL, 'lbs', '', '0.00', 74),
+(142, 'WGPP', 'Wasabi Grn Pbl 1-1.5cm/3/8\"-5/8\"', '1 cm - 1.5 cm or 3/8\" - 5/8\"', NULL, '35.00', NULL, 'lbs', '', '0.00', 75),
+(143, 'WHPP', 'Pol Woodgrain 2-3cm/3/4\"-1 1/4\" ', '2 cm - 3 cm or 3/4\" - 1 1/4\"', NULL, '45.00', NULL, 'lbs', '', '0.00', 76),
+(144, 'WBHPP', 'Wuyi Brown High Polish 2-3 Cm', '2 cm - 3 cm or 3/4\" - 1 1/4\"', NULL, '27.00', NULL, 'lbs', '', '0.00', 77),
+(145, 'AGB', 'Amador Granite Boulders Per Lb', 'Per Lb', NULL, '0.32', 'lbs', 'lbs', '', '0.00', 78),
+(146, 'AGB', 'Amador Granite Boulders', 'Per Ton', NULL, '64.00', 'ton', 'ton', '', '0.00', 78),
+(147, 'AWGB', 'Atwater Granite Boulder', 'Per Ton', NULL, '898.00', 'ton', 'ton', '', '0.00', 79),
+(148, 'BCSB', 'Basalt Column Sawn Bottom Per Lb ', 'Per Lb', NULL, '0.43', 'lbs', 'lbs', '', '0.00', 80),
+(149, 'BCSB', 'Basalt Column, Sawn Bottom', 'Per Ton', NULL, '860.00', 'ton', 'ton', '', '0.00', 80),
+(150, 'BCSBD', 'Basalt Fountain Rock Per Lb ', 'Per Lb', NULL, '0.94', 'lbs', 'lbs', '', '0.00', 81),
+(151, 'BCSBD', 'Basalt Column, Sawn Bottom Drill', 'Per Ton', NULL, '1880.00', 'ton', 'ton', '', '0.00', 81),
+(152, 'BCB', 'Boquet Canyon Boulder Per Lb', 'Per Lb', NULL, '0.33', 'lbs', 'lbs', '', '0.00', 82),
+(153, 'BCB', 'Boquet Canyon Boulde', 'Per Ton', NULL, '650.00', 'ton', 'ton', '', '0.00', 82),
+(154, 'CCB', 'Chiefcliff Boulder Per Pound ', 'Per Lb', NULL, '0.33', 'lbs', 'lbs', '', '0.00', 83),
+(155, 'BCB', 'Chiefcliff Boulder', 'Per Ton', NULL, '660.00', 'ton', 'ton', '', '0.00', 83);
 
 -- --------------------------------------------------------
 
@@ -319,7 +368,33 @@ INSERT INTO `product` (`id`, `sku`, `title`, `description`, `image`, `status`) V
 (54, 'MBTSC', '1.5\"-7\" Midnight Black Slate Tumbled Chip', '<ul>\r\n<li>Origin: Asia</li><li>Classification: Slate</li><li>Color Range: Charcoals, Tans</li><li>Finishes: Crushed Tumbled Natural Matte</li>\r\n</ul>\r\n\r\n\r\n<p>The black Slate Tumbled Chips look great in contemporary gardens, edge areas near walkways and drives, or use it as an unusual ground cover. Tumbled for smooth edges.\r\n</p>\r\n<p>We sell the Midnight Black Slate Tumbled Chips in one cubic foot bags, we supply the bags and you fill them. For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee you can use our rental truck or have us deliver to you. For orders over 20 tons please call us for direct pricing.</p>\r\n', '15-7MidnightBlackSlateTumbledChip.jpg', 'Active'),
 (55, '1278GGR', '1/2\"-7/8\" Glacier Green', '<p>Our 1/2\" - 7/8\" Glacier Green Gravel is crushed and cleaned, great for gardens, walkways and decorative accents in gardens.\r\n</p>\r\n<p>The Glacier Green Gravel can be purchased by the bag or delivery may be possible to your SF Bay area home.  Visit our large showroom and landscaping yard in San Carlos. </p>\r\n', '12-78GlacerGreen.jpg', 'Active'),
 (56, '38CBB', '1/4\" & 3/8\" Crushed Black Basalt', '<p>3/8\" Crushed Black Basalt rock is attractive decorative gravel with charcoal hues. It\'s angular in shape, it packs well for walkways, pathways, patios and driveways.\r\n</p>\r\n<p>We sell the 3/8\" Crushed Black Basalt in one cubic foot bag, we supply the bags and you fill them. For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee, have us deliver to you. For orders over 20 tons please call us for direct pricing.</p><p>3/8\" Crushed Black Basalt may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly.</p>\r\n', 'crushedBlackBasalt.jpg', 'Active'),
-(57, '18DG', '1/8\", 3/8\" & 3/4\" Desert Gold ', '<ul><li>Origin: North America</li><li>Classification: Gold Granite</li><li>Finishes: Crushed Angular Rocks</li><li>Application: Great for walkways/pathways</li></ul>\r\n<br/ >\r\n<p>Our Desert Gold stone material is a vibrant tan and white speckled crushed granite. Seamlessly integrates into succulent gardens, xeriscaping and various design aspect of a striking landscape. Common uses include pathways, driveways, and decorative accents. Also, used as a garden groundcover, and in planting beds as rock mulch. Desert Gold will contain fines. \r\n</p><p>Desert Gold is available in three nominal sizes: 1/8\", 3/8\" and  3/4\".</p>\r\n<p>Desert Gold may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly.</p>\r\n', '1-8DesertGold.jpg', 'Active');
+(57, '18DG', '1/8\", 3/8\" & 3/4\" Desert Gold ', '<ul><li>Origin: North America</li><li>Classification: Gold Granite</li><li>Finishes: Crushed Angular Rocks</li><li>Application: Great for walkways/pathways</li></ul>\r\n<br/ >\r\n<p>Our Desert Gold stone material is a vibrant tan and white speckled crushed granite. Seamlessly integrates into succulent gardens, xeriscaping and various design aspect of a striking landscape. Common uses include pathways, driveways, and decorative accents. Also, used as a garden groundcover, and in planting beds as rock mulch. Desert Gold will contain fines. \r\n</p><p>Desert Gold is available in three nominal sizes: 1/8\", 3/8\" and  3/4\".</p>\r\n<p>Desert Gold may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly.</p>\r\n', '1-8DesertGold.jpg', 'Active'),
+(58, '38T', '3/8\" Taffy', '<ul><li>Origin: North America</li><li>Color Range: Tans, Yellows, Buffs</li><li>Finishes: Crushed Angular - Natural Matte</li></ul>\r\n<br/ >\r\n<p>Lightweight crushed gravel. Size range is  1/4 \" -  1/2 \"\r\nBuff, orange and pink hues. Used for walkways and as a decorative mulch. Contains fines. </p><p>Desert Gold is available in three nominal sizes: 1/8\", 3/8\" and  3/4\".</p>\r\n<p>We sell the 3/8\" Taffy in one cubic foot bag, we supply the bags and you fill them. For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee, you can use our rental truck or have us deliver to you. For orders over 20 tons please call us for direct pricing.</p><p>3/8\" Taffy may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly.</p>\r\n', '3-8Taffy.jpg', 'Active'),
+(59, '21CBB', '2 1/2\" Crushed Black Basalt ', '<p>2 1/2\" Crushed Black Basalt is attractive decorative gravel with dark gray and charcoal hues.  May be some reds visible as well.</p>\r\n<p>We sell the 2 1/2\" Crushed Black Basalt in one cubic foot bag, we supply the bags and you fill them. For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee, you can use our rental truck. For orders over 20 tons please call us for direct pricing.</p><p>2 1/2\" Crushed Black Basalt may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly.</p>\r\n', '21-2CrushedBlackBasalt.jpg', 'Active'),
+(60, '38CRG', '3/8\" Crushed Rose Gold ', '<p>3/8\" Crushed Rose Gold is a beautiful shimmery rock that is very attractive with speckles of reflectiveness. It\'s rosy tan in color. Works well as garden groundcover for succulents and dry gardens. This product contains a lot of fines and it can not be separated from the gravel during pickup or delivery. Once gravel is installed, wet the area down with water so that the fines will settle to the bottom and the gravel will surface. </p>\r\n<p>3/8\" Crushed Rose Gold may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly.</p>\r\n', '3-8CrushedRoseGold.jpg', 'Active'),
+(61, '38Y', '3/8\" Crushed Yosemite Tan', '<p>3/8\" Crushed Yosemite Tan is decorative gravel that is used in pathways and walkways. The material will contain fines.</p>\r\n<p>We sell the 3/8\" Crushed Yosemite Tan in one cubic foot bag, we supply the bags and you fill them. For larger areas, you\'ll want to purchase by the ton. We can load your truck or for a fee, you can use our rental truck or have us deliver to you. For orders over 20 tons please call us for direct pricing.</p><p>3/8\" Crushed Yosemite Tan may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly.</p>\r\n', '3-8CrushedYosemiteTan.jpg', 'Active'),
+(62, '24LCC', 'Lin Creek Cobbles', '<p>Lin Creek Cobbles are rounded river rock cobblestones; however, some cobblestones are fractured and split. Colors include brown, tan, rust, grey, and blue-grey. The cobbles are commonly used for dry creek beds, borders, under oak trees and water features. </p>\r\n<p>LIN CREEK COBBLES WILL CONTAIN FINES - after installation, water the fines down to settle the dust and to expose the pebbles. </p><p>The 2\"-4\" Lin Creek Cobbles will cover about 85 square feet of area and the 3\"-8\" Lin Creek Cobbles will cover about 60 square feet of area.</p><p>Lin Creek Cobbles are sold in cubic foot sacks, we supply the bags, you load them. For larger areas, you will want to purchase the Lin Creek Cobbles in bulk by the ton. We can load your pickup truck or for a fee, have us deliver the Lin Creek Cobbles to your home or job site. If you need increments of 25 tons please call us for special pricing. We sell these pebbles by the ton, or by the U-Sack. With the U-Sacks, one full bag weighs 100 pounds, but you can fill them 1/4, 1/2, or 3/4 full for easier carrying.</p><p>Lin Creek Cobbles may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly. </p>\r\n', '2-4LinCreekCobble.jpg', 'Active'),
+(63, '12LC', 'Lin Creek Pebbles', '<p>Lin Creek Pebbles are rounded river rock pebbles, colors include brown, tan, grey and blue-grey. Commonly used as garden ground-cover, dry creek beds, and borders. </p>\r\n<p>LIN CREEK PEBBLES WILL CONTAIN FINES - after installation, water the fines down to settle the dust and to expose the pebbles. </p><p>Lin Creek Pebbles are sold in cubic foot sacks, we supply the bags, and you load them. For larger areas, you will want to purchase the Lin Creek Pebbles in bulk by the ton. We can load your pickup truck or for a fee, have us deliver the Lin Creek Cobbles to your home or job site. If you need increments of 25 tons please call us for special pricing. We sell these pebbles by the ton, or by the U-Sack. With the U-Sacks, one full bag weighs 100 pounds, but you can fill them 1/4, 1/2, or 3/4 full for easier carrying.\r\n</p><p>Lin Creek Pebbles may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly. </p>\r\n', '1-12LinCreekPebbles.jpg', 'Active'),
+(64, '38LODI', 'Lodi Creek Pebbles', '<p>Lodi Pebbles are a mixture of rounded and angular pebbles containing white, grey, blue, tan, brown and red colors. Commonly used for garden ground cover, pathways, planting beds, and as an exposed aggregate in concrete.</p>\r\n<p>Lodi Pebbles are sold in cubic foot sacks, we supply the bags, and you load them. For larger areas, you will want to purchase the Lodi Pebbles in bulk by the ton. We can load your pickup truck or for a fee, have us deliver the Lodi Pebbles to your home or job site. If you need increments of 25 tons please call us for special pricing. We sell these pebbles by the ton, or by the U-Sack. With the U-Sacks, one full bag weighs 100 pounds, but you can fill them 1/4, 1/2, or 3/4 full for easier carrying. </p><p>Lodi Pebbles may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly. </p>\r\n', 'lodiPebbles.jpg', 'Active'),
+(65, '38PAMI', 'Pami Pebbles', '<p>Pami Pebbles are a mixture of rounded pebbles, beautiful muted colors including burgundy, pink, tan, blue grey, and green. Great for barefoot pathways or garden ground-cover surface. Pami Pebbles are also our most popular aggregate for exposing in concrete walks and driveways.</p>\r\n<p>Pami Pebbles are sold in cubic foot sacks, we supply the bags, and you load them. For larger areas, you will want to purchase the Pami Pebbles in bulk by the ton. We can load your pickup truck or for a fee, have us deliver the Pami Pebbles to your home or job site. If you need increments of 25 tons please call us for special pricing. We sell these pebbles by the ton, or by the U-Sack. With the U-Sacks, one full bag weighs 100 pounds, but you can fill them 1/4, 1/2, or 3/4 full for easier carrying.</p>\r\n', '3-4PamiPebbles.jpg', 'Active'),
+(66, '12QP', 'Quartz Pebble', '<p>Quartz Pebbles are available by special order only. Please call or email us to order. </p>\r\n<p>Quartz Pebbles are a mixture of rounded and angular pebbles, including black, white and grey with a few rust-colored pebbles. Commonly used for garden ground cover, pathways, planting beds and walkways.</p><p>Quartz Pebbles are sold in cubic foot sacks, we supply the bags, and you load them. For larger areas, you will want to purchase the Quartz Pebbles in bulk by the ton. We can load your pickup truck or for a fee, have us deliver the Quartz Pebbles to your home or job site. If you need increments of 25 tons please call us for special pricing. We sell these pebbles by the ton, or by the U-Sack. With the U-Sacks, one full bag weighs 100 pounds, but you can fill them 1/4, 1/2, or 3/4 full for easier carrying.</p><p>Quartz Pebbles may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly. </p>\r\n', '1-2QuartzPebbles.jpg', 'Active'),
+(67, '12SB', 'Salmon Bay Pebbles - Limited Availability', '<p>Salmon Bay Pebbles are a mixture of opaque salmon colored pebbles with some white coloration. It is a beautiful and unique glass like rock. It is best used as an accent in the garden, as a mulch for containers or in dish gardens. Popular in pond applications and in water features.\r\n</p>\r\n<p>Salmon Bay Pebbles do contain fines and are available in two sizes: 1/4\" and 1/2\"</p><p>Salmon Bay Pebbles are sold in cubic foot sacks, we supply the bags, and you load them. For larger areas, you will want to purchase the Salmon Bay Pebbles in bulk by the ton. We can load your pickup truck or for a fee, have us deliver the Salmon Bay Pebbles to your home or job site. If you need increments of 25 tons please call us for special pricing. We sell these pebbles by the ton, or by the U-Sack. With the U-Sacks, one full bag weighs 100 pounds, but you can fill them 1/4, 1/2, or 3/4 full for easier carrying.</p>\r\n', 'samonBayPebbles.jpg', 'Active'),
+(68, 'BYHPP', 'Buckthorn Yellow High Polish Pebbles', '<p>The Buckthorn Yellow High Polish Pebbles are a mixture of yellow and tan pebbles, polished to a bright finish.  Light, natural looking stones are a great finishing color and surface for many indoor and outdoor garden, walkway, yards and planting applications.\r\n</p>\r\n<p>The Buckthorn Yellow High Polish Pebbles come pre-bagged, 55 pounds each.</p>\r\n', 'buckthornYellowHighPolishPebbles.jpg', 'Active'),
+(69, 'FSHPP', 'Five Springs High Polish Pebbles', '<p>The Five Springs High Polished Pebbles are a mixture of red, tan, black, white, and yellow pebbles. Great for indoor or outdoor use, along walkways instead of mulch, outdoor gardens and in fountains or water features.\r\n</p>\r\n<p>The Five Springs High Polished Pebbles come pre-bagged, 55 pounds each.</p>\r\n', '3-11-4FiveSpringsHighPolishPebbles.jpg', 'Active'),
+(70, 'HRHPP', 'Henna Red High Polish Pebbles', '<p>The Henna High Polish Pebbles are an assortment of red and brown colored stones. Strikingly beautiful accents in any landscape.  The 3/4\" to 1 1/4\" polished stones provide a finished look in natural settings indoors or outside.\r\n</p>\r\n<p>Henna High Polish Pebbles come pre-bagged, 55 pounds each.</p>\r\n', 'hennaRedHighPolishPebbles.jpg', 'Active'),
+(71, 'JGPP', 'Jade Green High Polish Pebbles', '<p>The Jade Green high Polish Pebbles have pale jade-green color with flecks of white, reminiscent of sea foam. These pebbles have a subtle translucency. Polished to a satin sheen.  The mix provides an interesting color tone for indoor and outdoor landscaping applications.\r\n</p>\r\n<p>Jade Green High Polish Pebbles come pre-bagged, 44 pounds each.</p>\r\n', 'jadeGreenHighPolishPebbles.jpg', 'Active'),
+(72, 'KBHPP', 'Kuro Black High Polish Pebbles', '<p>The Kuro Black Highly Polished Pebbles are an assortment of jet-black stones. Strikingly beautiful accents in any landscape, including shallow creeks, water accents and borders. Natural shine on the pebbles is fade resistant even over time.\r\n</p>\r\n<p>Kuro Black High Polished Pebbles come pre-bagged, 55 pounds each.</p>\r\n', '3-4-1-1-4KuroBlackHighPolishPebbles.jpg', 'Active'),
+(73, 'NPP', 'Niji Pebbles', '<p>Niji means rainbow in Japanese. Although the Niji Pebbles do not contain all the colors of the rainbow, they do have a combination of red, blue and white pebbles. An attractive choice for various landscaping projects, gardens, edging on walks and drives, and even fountains and water features.\r\n</p>\r\n<p>Niji Pebbles are available in two sizes: 3/8\" - 5/8\" (1 cm - 1  1/2  cm) and  3/4 \" - 1  1/4 \" (2 cm - 3 cm). Both sizes are available in pre-bagged 44 lbs. bags. For large quantity bulk orders, please contact us directly.</p>\r\n', '2-5-2-8NijiPebbles.jpg', 'Active'),
+(74, 'TFWHPP', 'Tufa White High Polish Pebbles', '<p>The Tufa White High Polish Pebbles are an assortment of white, grey stones. Strikingly beautiful accents in any landscape. 3/4\" to 1 1/4\" in size, they offer a bright finish to any landscaping project.  For use internal or outdoor projects.\r\n</p>\r\n<p>Tufa White High Polish Pebbles come pre-bagged, 55 pounds each.</p><p></p>\r\n', 'tufaWhiteHighPolishPebbles.jpg', 'Active'),
+(75, 'WGPP', 'Wasabi Green Pebbles', '<p>Marbled soft greens and blue pebbles add an interesting and beautiful color palette to both indoor and outdoor applications.  Non-shiny surface offers a natural appearance.  Looks great in both indoor and outdoor landscaping applications.\r\n</p>\r\n<p>Wasabi Green Pebbles come pre-bagged in 44 lbs. bags</p>\r\n', 'wasabiGreenPebbles.jpg', 'Active'),
+(76, 'WHPP', 'Woodgrain High Polish Pebbles', '<p>Natural woodgrain brown with white high polish pebbles give an earthy appearance with a fine finish.  Natural looking ground cover of eye-catching pebbles with natural striation in multiple brown tones, remarkably similar to wood grain.  The color palette of these pebbles is a warm beige with caramel and chocolate highlights. Polished to a satin sheen.\r\n</p>\r\n<p>Woodgrain High Polished Pebbles come pre-bagged in 44 lbs. bags</p>\r\n', 'woodgrainHighPolishPebbles.jpg', 'Active'),
+(77, 'WBHPP', 'Wuyi Brown High Polish Pebbles', '<p>Rich brown tones from our wuyi brown polished pebbles provide an elegant finish to indoor and outdoor landscaping and water features.  These are special order materials so contact our landscaping experts to determine the correct quantity for your application.\r\n</p>\r\n', 'wuyiBrownHighPolishPebbles.jpg', 'Active'),
+(78, 'AGB', 'Amador Granite Boulder', '<ul><li>Origin: North America</li><li>Classification: Granite</li><li>Color Range: Greys, Whites, Tans</li><li>Finish: Natural</li><li>Application: Accents</li></ul>\r\n<p>Coarse grain granite boulders with an interesting angular and sculptural elements. Many boulders might contain plug & feather marks. Reclaimed quarry tailings. Remnants of mid-1800s mining operations. Natural local stone.\r\n</p>\r\n<p>Amador Granite Boulders may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly.</p>\r\n', 'amadorGraniteBoulders.jpg', 'Active'),
+(79, 'AWGB', 'Atwater Granite Boulder', '<ul><li>Origin: North America</li><li>Classification: Granite</li><li>Color Range: Greys, Whites, Tans</li><li>Finish: Natural</li><li>Application: Accents</li></ul>\r\n<p>Atwater Granite Boulders have a smooth sculptural element that make a beautiful statement piece in any landscape.\r\n</p>\r\n', 'atwaterGraniteBoulder.jpg', 'Active'),
+(80, 'BCSB', 'Basalt Columns Sawn Bottom', '<ul><li>Origin: North America</li><li>Classification: Basalt </li><li>Color Range: Blacks, Greys</li><li>Finish: Natural</li><li>Application: Accents</li></ul>\r\n<p>Basalt Columns are large columnar shape rocks used where vertical landscape features are desired. Monolithic pieces of art, primarily gray in color with some brown or taupe color variations, sawn bottoms make for easy placement and reduced labor costs.\r\n</p>\r\n', 'basaltColumnsSawnBottom.jpg', 'Active'),
+(81, 'BCSBD', 'Basalt Columns Sawn Bottom - Drilled', '<ul><li>Origin: North America</li><li>Classification: Basalt </li><li>Color Range: Blacks, Greys</li><li>Finish: Natural</li><li>Application: Accents</li></ul>\r\n<p>Basalt Columns are large columnar rocks cored to be used as water features. Monolithic pieces of art, primarily gray in color with some brown or taupe color variations, sawn bottoms make for easy placement and reduced labor costs. These columns have been drilled to be used as water features. Group them in threes or more to create a unique and attractive water feature.\r\n</p>\r\n', 'basaltColumnsSawnBottom-Drilled.jpg', 'Active'),
+(82, 'BCB', 'Bouquet Canyon Boulders', '<ul><li>Origin: North America</li><li>Classification: Schist </li><li>Color Range: Greens, Greys, Tans, Rusts</li><li>Finish: Natural</li><li>Application: Accents</li></ul>\r\n<p>Bouquet Canyon Boulders are green-gray schist boulders with natural rust bronze coloration. Natural local stone.\r\n</p><p>Bouquet Canyon Boulders may qualify for LEED Local/Regional Materials credit. Distances vary for each project location. Please verify the materials accordingly.</p>\r\n', 'bouquetCanyonBoulders.jpg', 'Active'),
+(83, 'CCB', 'Chiefcliff Boulders', '<ul><li>Origin: North America</li><li>Classification: Argillite </li><li>Color Range: Grays, Blues, Tans</li><li>Finish: Natural</li><li>Application: Accents</li></ul>\r\n<p>Chiefcliff Boulders are decorative gray angular Argillite landscape boulders. These are sedimentary rocks with green moss and lichen highlights. Blocky and irregular shapes. Weight is from 150 pounds to over 4,000 pounds. Size range varies from 16 inches wide by 18 inches tall by 18 inches long to 30 inches wide by 48 inches tall by 60 inches long. Colors range from light grays, blue grays to browns.</p>\r\n', 'chiefcliffBoulders.jpg', 'Active');
 
 -- --------------------------------------------------------
 
@@ -396,7 +471,34 @@ INSERT INTO `product_category` (`id`, `sku`, `product_order`, `category`, `produ
 (54, 'MBTSC', 7, 23, 54),
 (55, '1278GGR', 8, 23, 55),
 (56, '38CBB', 3, 23, 56),
-(57, '18DG', 3, 23, 57);
+(57, '18DG', 3, 23, 57),
+(58, '38T', 3, 23, 58),
+(59, '21CBB', 6, 23, 59),
+(60, '34CDR', 7, 23, 45),
+(61, '38CRG', 8, 23, 60),
+(62, '38Y', 9, 23, 61),
+(63, '24LCC', 1, 24, 62),
+(64, '112LC', 1, 24, 63),
+(65, '38LODI', 3, 24, 64),
+(66, '38PAMI', 4, 24, 65),
+(67, '12QP', 5, 24, 66),
+(68, '12SB', 5, 24, 67),
+(69, 'BYHPP', 1, 25, 68),
+(70, 'FSHPP', 2, 25, 69),
+(71, 'HRHPP', 3, 25, 70),
+(72, 'JGPP', 3, 25, 71),
+(73, 'KBHPP', 4, 25, 72),
+(74, 'NPP', 6, 25, 73),
+(75, 'TFWHPP', 8, 24, 74),
+(76, 'WGPP', 9, 24, 75),
+(77, 'WHPP', 10, 24, 76),
+(78, 'WBHPP', 11, 24, 77),
+(79, 'AGB', 1, 11, 78),
+(80, 'AWGB', 1, 11, 79),
+(81, 'BCSB', 3, 11, 80),
+(82, 'BCSBD', 4, 11, 81),
+(83, 'BCB', 5, 11, 82),
+(84, 'CCB', 6, 11, 83);
 
 -- --------------------------------------------------------
 
@@ -513,19 +615,19 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `price`
 --
 ALTER TABLE `price`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `product_category`
 --
 ALTER TABLE `product_category`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `units_of_measure`
