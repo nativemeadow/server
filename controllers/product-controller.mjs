@@ -5,7 +5,7 @@ import { response } from 'express';
 export const getProduct = async (req, res, next) => {
     const { categoryId, id } = req.params;
     const db = DbService.getDbServiceInstance();
-    const query = `SELECT category.id as categoryId, category.title as categoryTitle,  product.id, product.sku, product.title, product.description, product.image, product.image_lens_size,
+    const query = `SELECT category.id as categoryId, category.title as categoryTitle,  product.id, product.sku, product.title, product.description, product.image, product.image_lens_size, product.extended,
         price.id as priceKey, price.sku as priceSku, price.title as priceTitle, price.description as priceDescr, price.image as priceImage, price.price, price.size, price.units, price.coverage, price.coverage_value, price.online_minimum 
         FROM product 
         JOIN price ON price.product = product.id   
@@ -32,6 +32,7 @@ export const getProduct = async (req, res, next) => {
                         description: prod.description,
                         image: prod.image,
                         imageLensSize: prod.image_lens_size,
+                        extended: prod.extended,
                         pricing: [],
                     };
                     productArray.push(productObject);
