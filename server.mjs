@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors(corsOptions));
 app.use('/images', express.static(path.join('images')));
+app.use('/pdf', express.static(path.join('pdf')));
 
 const PORT = process.env.PORT || 5001
 
